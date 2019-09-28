@@ -5,7 +5,6 @@
   "license": "MIT",
   "homepage": "http://fbrctr.github.io/",
   "scripts": {
-    "prestart": "npm install",
     "build": "npm run prestart && gulp",
     "start": "gulp --dev",
     "test": "eslint --fix . && npm run build",

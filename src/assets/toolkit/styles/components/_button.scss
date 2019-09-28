@@ -1,0 +1,30 @@
+.btn {
+  border: none;
+  outline: none;
+  background-color: #77C395;
+  color: white;
+  font-family: 'Be Vietnam', sans-serif;
+  font-size: 1.6rem;
+}
+
+.btn--accent {
+  background-color: #D28369;
+
+  &.btn--flat {
+    background-color: transparent;
+    color: #D28369;
+
+    &:hover {
+      background-color: #FAE9E3;
+    }
+  }
+}
+
+.btn--flat {
+  background-color: transparent;
+  color: #77C395;
+
+  &:hover {
+    background-color: #DFF6E8;
+  }
+}
