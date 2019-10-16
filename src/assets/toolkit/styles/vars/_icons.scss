@@ -1,0 +1,13 @@
+:root {
+  --icon-size-base: 1.6rem;
+  --icon-size-sub: 1.2rem;
+  --icon-size-display-3: 2rem;
+  --icon-size-display-2: 3rem;
+  --icon-size-display-1: 4rem;
+
+  @include media-min(tablet) {
+    --icon-size-display-3: 2.4rem;
+    --icon-size-display-2: 3.6rem;
+    --icon-size-display-1: 4.8rem;
+  }
+}

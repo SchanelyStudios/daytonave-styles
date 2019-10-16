@@ -1,0 +1,77 @@
+.icon {
+  display: inline-block;
+  font-size: var(--icon-size);
+
+  &:not([class*="icon--size-"]) {
+    --icon-size: var(--icon-size-base);
+  }
+
+  &:not([class*="icon--color-"]) {
+    color: color(base, 200);
+  }
+}
+
+///
+/// Icon color variations
+///
+$icon-colors: (
+  primary,
+  secondary,
+  alternate,
+  accent
+);
+@each $color in $icon-colors {
+  .icon--#{$color},
+  .icon-group--#{$color} .icon {
+    color: color($color);
+  }
+}
+
+///
+/// Icon size variations
+///
+$icon-sizes: (
+  sub,
+  display-1,
+  display-2,
+  display-3
+);
+@each $size in $icon-sizes {
+  .icon--size-#{$size},
+  .icon-group--size-#{$size} {
+    --icon-size: var(--icon-size-#{$size});
+  }
+}
+
+///
+/// Preset icon options
+///
+.icon--caret-down {
+  @extend .fas;
+  @extend .fa-caret-down;
+}
+
+.icon--church {
+  @extend .far;
+  @extend .fa-church;
+}
+
+.icon--checkbox {
+  @extend .fal;
+  @extend .fa-square;
+}
+
+.icon--checkbox-on {
+  @extend .fas;
+  @extend .fa-check-square;
+}
+
+.icon--radio {
+  @extend .fal;
+  @extend .fa-circle;
+}
+
+.icon--radio-on {
+  @extend .fas;
+  @extend .fa-dot-circle;
+}
