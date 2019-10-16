@@ -1,8 +1,9 @@
 button:not(.unstyled),
 .btn {
   @extend %type-label;
-  @extend %type-block-label;
 
+  padding-top: calc(#{baseline(.5)} + #{type-pad-top(base)});
+  padding-bottom: calc(#{baseline(.5)} + #{type-pad-bottom(base)});
   padding-left: $grid-pad;
   padding-right: $grid-pad;
   display: inline-block;
