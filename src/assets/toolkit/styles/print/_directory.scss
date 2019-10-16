@@ -1,0 +1,43 @@
+.households-wrapper {
+  border: 1px dotted grey;
+}
+
+.households {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.household {
+  width: calc(50% - 20px);
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  grid-template-areas:
+    "img img sur     sur"
+    "img img members contact";
+}
+
+.household__surname {
+  grid-area: sur;
+}
+
+.household__contact {
+  grid-area: contact;
+}
+
+.household__image {
+  grid-area: img;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.household__members {
+  grid-area: members;
+}

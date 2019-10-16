@@ -1,0 +1,42 @@
+households:
+  1:
+    surname: "Chavies"
+    phone: "(937) 602-5121"
+    email: "bchavies@woh.rr.com"
+    street: "4112 Vineland Tr"
+    city: "Beavercreek"
+    state: "OH"
+    zip: "45430"
+    photo_url: "https://placehold.it/600x400"
+    adults:
+      - "Bill"
+  2:
+    surname: "Chavies"
+    phone: "(937) 376-1328"
+    email: "john.chavies@daytonave.org"
+    street: "1567 W Spring Valley Paintersville Rd"
+    city: "Spring Valley"
+    state: "OH"
+    zip: "45370"
+    photo_url: "https://placehold.it/600x400"
+    adults:
+      - "John"
+      - "Tammy"
+      - "Jenna"
+    children:
+      - "Brayden"
+  3:
+    surname: "Schanely"
+    phone: "(937) 620-6129"
+    email: "philschanely@gmail.com"
+    street: "3415 Wildflower Place"
+    city: "Cedarville"
+    state: "OH"
+    zip: "45314"
+    photo_url: "https://placehold.it/600x400"
+    adults:
+      - "Phil"
+      - "Karen"
+    children:
+      - "Ethan"
+      - "Abby"

@@ -1,0 +1,70 @@
+{
+  "households": [
+    {
+      "surname": "Chavies",
+      "phone": "(937) 602-5121",
+      "email": "bchavies@woh.rr.com",
+      "street": "4112 Vineland Tr",
+      "city": "Beavercreek",
+      "state": "OH",
+      "zip": "45430",
+      "photo_url": "https://placehold.it/400x400",
+      "adults": [
+        {
+          "name": "Bill"
+        }
+      ],
+      "children": []
+    },
+    {
+      "surname": "Chavies",
+      "phone": "(937) 376-1328",
+      "email": "john.chavies@daytonave.org",
+      "street": "1567 W Spring Valley Paintersville Rd",
+      "city": "Spring Valley",
+      "state": "OH",
+      "zip": "45370",
+      "adults": [
+        {
+          "name": "John"
+        },
+        {
+          "name": "Tammy"
+        },
+        {
+          "name": "Jenna"
+        }
+      ],
+      "children": [
+        {
+          "name": "Brayden"
+        }
+      ]
+    },
+    {
+      "surname": "Schanely",
+      "phone": "(937) 620-6129",
+      "email": "philschanely@gmail.com",
+      "street": "3415 Wildflower Place",
+      "city": "Cedarville",
+      "state": "OH",
+      "zip": "45314",
+      "adults": [
+        {
+          "name": "Phil"
+        },
+        {
+          "name": "Karen"
+        }
+      ],
+      "children": [
+        {
+          "name": "Ethan"
+        },
+        {
+          "name": "Abby"
+        }
+      ]
+    }
+  ]
+}

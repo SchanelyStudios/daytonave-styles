@@ -1,0 +1,29 @@
+<main class="households-wrapper">
+  <ul class="households">
+    {{#each people.households}}
+      <li class="household">
+        <h2 class="household__surname">{{ surname }}</h2>
+        <div class="household__image">
+          <img src="{{ photo_url }}" />
+        </div>
+        <ul class="household__members">
+          {{#each adults}}
+            <li class="person">{{ this }}</li>
+          {{/each}}
+          {{#each children}}
+            <li class="person">{{ this }}</li>
+          {{/each}}
+        </ul>
+        <div class="household__contact">
+          <p>
+            {{ street }}
+            <br/>
+            {{ city }}, {{ state }} {{ zip }}
+          </p>
+          <p>{{ phone }}</p>
+          <p>{{ email }}</p>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</main>
