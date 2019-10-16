@@ -1,0 +1,88 @@
+
+/// Base type definitions
+///
+
+@each $spec-name, $spec in $type-specs {
+  %type-#{$spec-name} {
+    font-family: type-font($spec-name);
+    font-size: type-size($spec-name);
+    font-style: type-style($spec-name);
+    text-transform: type-transform($spec-name);
+    font-weight: type-weight($spec-name);
+    line-height: type-leading($spec-name);
+  }
+
+  %type-block-#{$spec-name} {
+    padding-top: type-pad-top($spec-name);
+    padding-bottom: type-pad-bottom($spec-name);
+  }
+}
+
+
+/// Simple extensiions
+///
+
+body {
+  @extend %type-base;
+}
+
+h1:not([class]) {
+  @extend %type-title;
+  @extend %type-block-title;
+}
+
+h2:not([class]) {
+  @extend %type-display-1;
+  @extend %type-block-display-1;
+}
+
+h3:not([class]) {
+  @extend %type-display-2;
+  @extend %type-block-display-2;
+}
+
+h4:not([class]) {
+  @extend %type-display-3;
+  @extend %type-block-display-3;
+}
+
+h5:not([class]) {
+  @extend %type-display-4;
+  @extend %type-block-display-4;
+}
+
+h6:not([class]) {
+  @extend %type-display-5;
+  @extend %type-block-display-5;
+}
+
+.lead {
+  @extend %type-lead;
+  @extend %type-block-lead;
+}
+
+li {
+  @extend %type-base;
+  @extend %type-block-base;
+}
+
+p {
+  @extend %type-base;
+  @extend %type-block-base;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+ul, ol {
+  &:not([class]) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+
+    > li {
+      list-style: disc;
+    }
+  }
+}

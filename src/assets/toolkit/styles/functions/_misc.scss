@@ -1,0 +1,95 @@
+////
+/// Functions
+///
+
+
+/// Get baseline value
+///
+/// @param {Number} $value [1] The value to multiply by the baseline
+/// @param {Length} $offset [0] The value by which to offset the returned number
+///
+@function baseline($value: 1, $offset: 0) {
+  @return $grid-baseline * $value;
+}
+
+
+/// Get baseline minus
+///
+/// @param {Number} $value [1] The value to multiply by the baseline
+/// @param {Length} $offset [0] The value by which to offset the returned number
+///
+@function baseline-minus($value: 1, $offset: 0) {
+  $size: baseline($value);
+
+  @return calc(#{$size} - #{$offset});
+}
+
+
+/// Get breakpoint value
+///
+/// @param {String|Length} $breakpoint Breakpoint name or acutal length value
+/// @param {String} $position Position within breakpoint (min or max)
+///
+@function breakpoint($value, $position: null) {
+  // If value is a length, stop here and return it
+  @if (type-of($value) == number) {
+    @debug "--- Number provided: #{$value}";
+    @return $value;
+  }
+
+  // Look for value in breakpoints
+  $breakpoint: map-get($breakpoints, $value);
+  $position-value: null;
+  @if ($breakpoint) {
+    // Look for position in breakpoint
+    @debug "--- Breakpoint found: #{$value}";
+    $position-value: map-get($breakpoint, $position);
+  }
+
+  @if ($position-value) {
+    @debug "--- Position value found: #{$position-value}";
+    @return $position-value;
+  }
+
+  @debug "--- X No breakpoint found for #{$value} and #{$position}";
+  @return null;
+}
+
+/// Returns a `calc()` for one side of a center-padded block
+///
+/// @param {Length} $width [100%] The base width to center
+/// @param {Length} $pad [0] If greater than 0, adds additional padding inside the width
+/// @return A `calc()` statement
+///
+@function center-pad-value($width: 100%, $pad: 0) {
+  @if ($pad > 0) {
+    @return calc((100vw - #{$width} + #{($pad * 2)}) / 2);
+  }
+
+  @return calc((100vw - #{$width}) / 2);
+}
+
+/// Get color from a given theme map
+///
+/// @param {String} $color-name The name of the desired color from the colors map
+/// @param {String} $value [500] The value to retrieve from the given color map
+///
+@function color($color-name, $value: 500) {
+  @return map-get(map-get($colors, $color-name), $value);
+}
+
+/// Get font
+///
+/// @param {String} $value [base] The value to retrieve from the given color map
+///
+@function font($value: base) {
+  @return map-get($fonts, $value);
+}
+
+/// Get grid-based width value
+///
+/// @param {String} $value [base] The number of columns
+///
+@function grid-width($value: 12) {
+  @return $grid-unit * $value;
+}

@@ -1,0 +1,87 @@
+/// Get type spec setting
+///
+/// @param {String} $setting The desired setting to retrieve
+/// @param {String} $spec [base] The desired spec from which to retrieve the setting
+///
+@function get-type-spec($setting, $value: base) {
+  $spec: map-get($type-specs, $value);
+  @return map-get($spec, $setting);
+}
+
+/// Get type spec setting
+///
+/// @param {String} $setting The desired setting to retrieve
+/// @param {String} $spec [base] The desired spec from which to retrieve the setting
+///
+@function get-type-size-spec($setting, $level: level-5) {
+  $var: "--#{$setting}-#{$level}";
+  @return var(#{$var});
+}
+
+/// Get type spec font setting
+///
+/// @param {String} $value [base] The spec value to retrieve
+///
+@function type-font($spec: base) {
+  @return get-type-spec(font, $spec);
+}
+
+/// Get type spec leading setting
+///
+/// @param {String} $value [base] The spec value to retrieve
+///
+@function type-leading($spec: base) {
+  $level: get-type-spec(size, $spec);
+  @return get-type-size-spec(leading, $level);
+}
+
+/// Get type spec bottom padding setting
+///
+/// @param {String} $value [base] The spec value to retrieve
+///
+@function type-pad-bottom($spec: base) {
+  $level: get-type-spec(size, $spec);
+  @return get-type-size-spec(pad-bottom, $level);
+}
+
+/// Get type spec top padding setting
+///
+/// @param {String} $value [base] The spec value to retrieve
+///
+@function type-pad-top($spec: base) {
+  $level: get-type-spec(size, $spec);
+  @return get-type-size-spec(pad-top, $level);
+}
+
+/// Get type spec size setting
+///
+/// @param {String} $value [base] The spec value to retrieve
+///
+@function type-size($spec: base) {
+  $level: get-type-spec(size, $spec);
+  @return get-type-size-spec(size, $level);
+}
+
+/// Get type spec style setting
+///
+/// @param {String} $value [base] The spec value to retrieve
+///
+@function type-style($spec: base) {
+  @return get-type-spec(style, $spec);
+}
+
+/// Get type spec transform setting
+///
+/// @param {String} $value [base] The spec value to retrieve
+///
+@function type-transform($spec: base) {
+  @return get-type-spec(transform, $spec);
+}
+
+/// Get type spec weight setting
+///
+/// @param {String} $value [regular] The spec value to retrieve
+///
+@function type-weight($spec: base) {
+  @return get-type-spec(weight, $spec);
+}

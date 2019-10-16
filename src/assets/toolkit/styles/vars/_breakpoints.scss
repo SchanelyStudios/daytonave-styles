@@ -1,0 +1,14 @@
+$breakpoints: (
+  phone: (
+    min: null,
+    max: grid-width(6) - 1px,
+  ),
+  tablet: (
+    min: grid-width(6),
+    max: grid-width(12) - 1px,
+  ),
+  desktop: (
+    min: grid-width(12),
+    max: null,
+  ),
+);

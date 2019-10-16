@@ -1,0 +1,92 @@
+.field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.field__label {
+  @extend %type-base-em;
+  @extend %type-block-base-em;
+
+  margin-bottom: baseline(.5);
+  width: 100%;
+}
+
+.field__feedback {
+  margin-top: baseline(.5);
+
+  > p {
+    @extend %type-base-em;
+    @extend %type-block-base-em;
+  }
+
+  .field--success & {
+    color: color(secondary);
+  }
+
+  .field--error & {
+    color: color(accent);
+  }
+
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.field__control {
+  width: 100%;
+}
+
+.field-control {
+  > input[type="text"],
+  > input[type="email"],
+  > textarea {
+    @extend %type-base;
+
+    padding-top: calc(var(--pad-top-level-5) + #{baseline-minus(0.5, 1px)});
+    padding-right: $grid-pad-half - 1px;
+    padding-bottom: calc(var(--pad-bottom-level-5) + #{baseline-minus(0.5, 1px)});
+    padding-left: $grid-pad-half - 1px;
+    width: 100%;
+    display: block;
+    border: 1px solid color(base, 700);
+    border-radius: 1px;
+    color: color(base, 200);
+
+    &:focus {
+      @include focus-box();
+    }
+
+    .field--success & {
+      border-color: color(secondary);
+    }
+
+    .field--error & {
+      border-color: color(accent);
+    }
+  }
+
+  > select {
+    @extend %type-base;
+
+    width: 100%;
+    height: 30px;
+    border: 1px solid color(base);
+    border-radius: 1px;
+
+    &:focus {
+      @include focus-box();
+    }
+
+    .field--success & {
+      border-color: color(secondary);
+    }
+
+    .field--error & {
+      border-color: color(accent);
+    }
+  }
+
+  > textarea {
+    min-height: baseline(5.5);
+  }
+}

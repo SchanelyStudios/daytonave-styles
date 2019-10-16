@@ -1,0 +1,87 @@
+/// Media query
+///
+/// Basic media query wrapper shorthand
+///
+@mixin media($min-viewport: null, $max-viewport: null) {
+  $from: breakpoint($min-viewport, min);
+  $to: breakpoint($max-viewport, max);
+
+  @debug "Media query from #{$from} to #{$to}";
+
+  @if ($from and $to) {
+    @media (min-width: $from) and (max-width: $to) {
+      @content;
+    }
+  }
+
+  @else if ($from) {
+    @include media-min($from) {
+      @content;
+    }
+  }
+
+  @else if ($to) {
+    @include media-max($to) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "No valid range found: #{$min-viewport} [#{$from}] to #{$max-viewport} [#{$to}]";
+  }
+}
+
+/// Media query for viewport
+///
+/// Basic media query wrapper shorthand for the span of a given viewport
+///
+@mixin media-for($viewport) {
+  $from: breakpoint($viewport, min);
+  $to: breakpoint($viewport, max);
+
+  @debug "Media query for #{$viewport}: #{$from} to #{$to}";
+
+  @include media($from, $to) {
+    @content;
+  }
+}
+
+/// Media query max
+///
+/// Basic media query wrapper shorthand up to a given dimension
+///
+@mixin media-max($max-viewport) {
+  $to: breakpoint($max-viewport, max);
+
+  @debug "Max query for #{$to}";
+
+  @if ($to) {
+    @media (max-width: $to) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "No max media query returned; check source for: #{$max-viewport} and #{$to}";
+  }
+}
+
+/// Media query min
+///
+/// Basic media query wrapper shorthand starting at a given dimension
+///
+@mixin media-min($min-viewport) {
+  $from: breakpoint($min-viewport, min);
+
+  @debug "Min Media query for #{$from}";
+
+  @if ($from) {
+    @media (min-width: $from) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "No min media query returned; check source for: #{$min-viewport} and #{$from}";
+  }
+}

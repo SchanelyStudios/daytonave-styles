@@ -1,0 +1,95 @@
+
+/// Center Layout
+///
+/// Centers an element using `auto` margins.
+///
+@mixin center-layout() {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+/// Centers Layout Padding Variation
+///
+/// Centers an element using padding calculated from a max width.
+///
+@mixin center-pad($width, $pad: 0, $addBoxSizing: true) {
+  $widthValue: map-get($widths, $width);
+
+  @if (not $widthValue) {
+    $widthValue: $width;
+  }
+
+  padding-right: center-pad-value($widthValue, $pad);
+  padding-left: center-pad-value($widthValue, $pad);
+
+  @if ($addBoxSizing) {
+    box-sizing: border-box;
+  }
+}
+
+/// Set up a cover image
+///
+@mixin cover-image() {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+/// Fill Container
+///
+/// Instructs an element to fill its container by absolutely positioning it to
+/// span all sides of the box.
+///
+@mixin fill-container() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+/// Focus box
+///
+/// Instructs an element to fill its container by absolutely positioning it to
+/// span all sides of the box.
+///
+@mixin focus-box() {
+  outline: none;
+  box-shadow: 0 0 0 2px theme-color(gray-2), 0 0 0 3px theme-color(gray-1);
+}
+
+
+/// Inline List
+///
+/// Sets up an inline list such as for tiling elements.
+///
+@mixin list-inline() {
+  display: flex;
+  list-style: none;
+}
+
+
+/// Transition
+///
+/// Sets up an inline list such as for tiling elements.
+///
+@mixin transition($property) {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: $property;
+}
+
+/// Position
+///
+/// Provides positions offsets for each provided side of the box
+///
+@mixin position($top: null, $right: null, $bottom: null, $left: null) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

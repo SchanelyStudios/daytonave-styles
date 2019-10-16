@@ -1,0 +1,85 @@
+$color-white: #fff;
+$color-black: #000;
+$colors: (
+  primary: (
+    100: #2d3038,
+    200: #454a5c,
+    300: #57607d,
+    400: #6876a1,
+    500: #7386c2,
+    600: #8f9ecf,
+    700: #ABB7DB,
+    800: #c8cfe8,
+    900: #e8ebf6
+  ),
+  secondary: (
+    100: #242e28,
+    200: #3d5446,
+    300: #578067,
+    400: #6aa381,
+    500: #77c395,
+    600: #8ccfa7,
+    700: #A6DEBC,
+    800: #c2edd3,
+    900: #cff6e8
+  ),
+  accent: (
+    100: #2b2523,
+    200: #523d37,
+    300: #7d5b50,
+    400: #a87260,
+    500: #d28369,
+    600: #db9984,
+    700: #e6b2A1,
+    800: #f0cdc2,
+    900: #fae9e3
+  ),
+  alternate: (
+    100: #28232e,
+    200: #453b52,
+    300: #625275,
+    400: #81689e,
+    500: #9C7BC2,
+    600: #ae90d1,
+    700: #c4abe0,
+    800: #d9c5f0,
+    900: #f0e5fd
+  ),
+  base: (
+    100: #151515,
+    200: #3d3d42,
+    300: #525256,
+    400: #646469,
+    500: #818186,
+    600: #9a9a9d,
+    700: #b6b6bb,
+    800: #d7d7e0,
+    900: #f5f5f7
+  ),
+  white: (
+    500: $color-white,
+  ),
+  black: (
+    500: $color-black,
+  ),
+);
+
+$fa-font-path: "../fontawesome/webfonts";
+
+$f-preview-background-color: map-get(map-get($colors, white), 500);
+$f-container-background-color: map-get(map-get($colors, base), 900);
+
+$fonts: (
+  base: ("Muli", sans-serif),
+  display: ("Yellowtail", cursive),
+);
+
+$grid-baseline: 2rem;
+$grid-gutter: 40px;
+$grid-unit: 120px;
+
+$grid-pad: $grid-gutter / 2;
+$grid-pad-half: $grid-pad / 2;
+$grid-column: $grid-unit - $grid-gutter;
+$grid-gap: $grid-baseline;
+$grid-row: $grid-baseline * 7;

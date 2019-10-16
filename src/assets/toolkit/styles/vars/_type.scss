@@ -1,0 +1,169 @@
+:root {
+  // Sizes
+  --size-level-1-display: 3.7rem;
+  --size-level-2-display: 3.7rem;
+  --size-level-1: 3.2rem;
+  --size-level-2: 2.4rem;
+  --size-level-3: 2rem;
+  --size-level-4: 1.5rem;
+  --size-level-5: 1.5rem;
+  --size-level-6: 1.2rem;
+
+  @include media-min(tablet) {
+    --size-level-1-display: 5.8rem;
+    --size-level-2-display: 3.7rem;
+    --size-level-1: 4rem;
+    --size-level-2: 3.2rem;
+    --size-level-3: 2.4rem;
+    --size-level-4: 2rem;
+    --size-level-5: 1.5rem;
+    --size-level-6: 1.2rem;
+  }
+
+  // Leadings
+  --leading-level-1-display: 4rem;
+  --leading-level-2-display: 4rem;
+  --leading-level-1: 4rem;
+  --leading-level-2: 3rem;
+  --leading-level-3: 3rem;
+  --leading-level-4: 2rem;
+  --leading-level-5: 2rem;
+  --leading-level-6: 2rem;
+
+  @include media-min(tablet) {
+    --leading-level-1-display: 6rem;
+    --leading-level-2-display: 4rem;
+    --leading-level-1: 5rem;
+    --leading-level-2: 4rem;
+    --leading-level-3: 3rem;
+    --leading-level-4: 3rem;
+    --leading-level-5: 2rem;
+    --leading-level-6: 2rem;
+  }
+
+  // Paddings
+  --pad-top-level-1-display: 8px;
+  --pad-top-level-2-display: 8px;
+  --pad-top-level-1: 8px;
+  --pad-top-level-2: 6px;
+  --pad-top-level-3: 8px;
+  --pad-top-level-4: 5px;
+  --pad-top-level-5: 5px;
+  --pad-top-level-6: 6px;
+
+  --pad-bottom-level-1-display: 2px;
+  --pad-bottom-level-2-display: 2px;
+  --pad-bottom-level-1: 2px;
+  --pad-bottom-level-2: 4px;
+  --pad-bottom-level-3: 2px;
+  --pad-bottom-level-4: 5px;
+  --pad-bottom-level-5: 5px;
+  --pad-bottom-level-6: 4px;
+
+  @include media-min(tablet) {
+    --pad-top-level-1-display: 2px;
+    --pad-top-level-2-display: 8px;
+    --pad-top-level-1: 0;
+    --pad-top-level-2: 8px;
+    --pad-top-level-3: 6px;
+    --pad-top-level-4: 8px;
+    --pad-top-level-5: 5px;
+    --pad-top-level-6: 6px;
+
+    --pad-bottom-level-1-display: 8px;
+    --pad-bottom-level-2-display: 2px;
+    --pad-bottom-level-1: 0;
+    --pad-bottom-level-2: 2px;
+    --pad-bottom-level-3: 4px;
+    --pad-bottom-level-4: 2px;
+    --pad-bottom-level-5: 5px;
+    --pad-bottom-level-6: 4px;
+  }
+}
+
+$type-specs: (
+  title: (
+    font: font(display),
+    size: level-1-display,
+    style: normal,
+    transform: none,
+    weight: 400,
+  ),
+  display-1: (
+    font: font(base),
+    size: level-1,
+    style: normal,
+    transform: none,
+    weight: 700,
+  ),
+  display-2: (
+    font: font(base),
+    size: level-2,
+    style: normal,
+    transform: none,
+    weight: 700,
+  ),
+  display-3: (
+    font: font(base),
+    size: level-3,
+    style: normal,
+    transform: none,
+    weight: 700,
+  ),
+  display-4: (
+    font: font(base),
+    size: level-4,
+    style: normal,
+    transform: none,
+    weight: 700,
+  ),
+  display-5: (
+    font: font(base),
+    size: level-5,
+    style: normal,
+    transform: none,
+    weight: 700,
+  ),
+  display-6: (
+    font: font(base),
+    size: level-5,
+    style: normal,
+    transform: none,
+    weight: 700,
+  ),
+  lead: (
+    font: font(base),
+    size: level-4,
+    style: normal,
+    transform: none,
+    weight: 300,
+  ),
+  base: (
+    font: font(base),
+    size: level-5,
+    style: normal,
+    transform: none,
+    weight: 300,
+  ),
+  base-em: (
+    font: font(base),
+    size: level-5,
+    style: normal,
+    transform: none,
+    weight: 600,
+  ),
+  label: (
+    font: font(base),
+    size: level-5,
+    style: normal,
+    transform: uppercase,
+    weight: 300,
+  ),
+  sub: (
+    font: font(base),
+    size: level-6,
+    style: normal,
+    transform: none,
+    weight: 300,
+  ),
+);
