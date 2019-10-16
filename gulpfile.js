@@ -23,6 +23,10 @@ function reload(done) {
 // configuration
 const config = {
   dev: !!argv.dev,
+  fontawesome: {
+    src: 'src/assets/toolkit/fontawesome/**/*',
+    dest: 'dist/assets/toolkit/fontawesome'
+  },
   styles: {
     browsers: [
       'ie 11',
@@ -118,6 +122,11 @@ function scripts(done) {
     }
     done();
   });
+}
+
+// fontawesome
+function fontawesome() {
+  return gulp.src(config.fontawesome.src).pipe(gulp.dest(config.fontawesome.dest));
 }
 
 // images
@@ -232,6 +241,6 @@ function watch() {
 }
 
 // default build task
-let tasks = [clean, styles, scripts, images, assembler];
+let tasks = [clean, styles, scripts, fontawesome, images, assembler];
 if (config.dev) tasks = tasks.concat([serve, watch]);
 gulp.task('default', gulp.series(tasks));
