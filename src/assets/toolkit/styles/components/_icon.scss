@@ -1,3 +1,6 @@
+///
+/// Icon base class
+///
 .icon {
   display: inline-block;
   font-size: var(--icon-size);
@@ -12,6 +15,41 @@
 }
 
 ///
+/// Icon group to place on groups of icons or containers of icons for consistent styling
+///
+.icon-group {}
+
+.icon-group--tiles {
+  display: grid;
+  grid-column-gap: $grid-pad-half;
+  grid-row-gap: baseline(2);
+  align-items: center;
+
+  @include media-for(phone) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include media-for(tablet) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include media-for(desktop) {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  li {
+    border-radius: 2px;
+    text-align: center;
+    padding: 10px 5px;
+
+    .icon {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+///
 /// Icon color variations
 ///
 $icon-colors: (
@@ -21,7 +59,7 @@ $icon-colors: (
   accent
 );
 @each $color in $icon-colors {
-  .icon--#{$color},
+  .icon--color-#{$color},
   .icon-group--#{$color} .icon {
     color: color($color);
   }
@@ -38,7 +76,7 @@ $icon-sizes: (
 );
 @each $size in $icon-sizes {
   .icon--size-#{$size},
-  .icon-group--size-#{$size} {
+  .icon-group--size-#{$size} .icon {
     --icon-size: var(--icon-size-#{$size});
   }
 }
@@ -66,6 +104,26 @@ $icon-sizes: (
   @extend .fa-check-square;
 }
 
+.icon--facebook {
+  @extend .fab;
+  @extend .fa-facebook-square;
+}
+
+.icon--map-pointer {
+  @extend .fas;
+  @extend .fa-map-marker-alt;
+}
+
+.icon--phone {
+  @extend .fas;
+  @extend .fa-phone;
+}
+
+.icon--podcast {
+  @extend .fas;
+  @extend .fa-microphone;
+}
+
 .icon--radio {
   @extend .fal;
   @extend .fa-circle;
@@ -74,4 +132,9 @@ $icon-sizes: (
 .icon--radio-on {
   @extend .fas;
   @extend .fa-dot-circle;
+}
+
+.icon--youtube {
+  @extend .fab;
+  @extend .fa-youtube;
 }
