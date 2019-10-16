@@ -1,0 +1,63 @@
+$-section-header-pad-top-display-1: baseline(7);
+$-section-header-pad-bottom-display-1: baseline(6.5);
+$-section-header-pad-top-display-2: baseline(2);
+$-section-header-pad-bottom-display-2: baseline(3.5);
+$-section-header-pad-top-display-3: baseline(2.5);
+$-section-header-pad-bottom-display-3: baseline(3.5);
+
+.section-header {
+  padding-left: $grid-pad;
+  padding-right: $grid-pad;
+  text-align: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    border-top: 4px solid color(primary);
+    display: block;
+    position: absolute;
+    width: 100%;
+    max-width: 200px;
+    transform: translateX(-50%);
+  }
+}
+
+.section-header--display-1 {
+  @extend %type-display-1;
+
+  @include media-for(phone) {
+    padding-top: $-section-header-pad-top-display-2;
+    padding-bottom: $-section-header-pad-bottom-display-2;
+
+    &::after {
+      @include position($bottom: baseline(2), $left: 50%);
+    }
+  }
+
+  @include media(tablet) {
+    padding-top: $-section-header-pad-top-display-1;
+    padding-bottom: $-section-header-pad-bottom-display-1;
+
+    &::after {
+      @include position($bottom: baseline(4), $left: 50%);
+    }
+  }
+}
+
+.section-header--display-2 {
+  @extend %type-display-2;
+
+  &::after {
+    @include position($bottom: baseline(2), $left: 50%);
+  }
+
+  @include media-for(phone) {
+    padding-top: $-section-header-pad-top-display-3;
+    padding-bottom: $-section-header-pad-bottom-display-3;
+  }
+
+  @include media(tablet) {
+    padding-top: $-section-header-pad-top-display-2;
+    padding-bottom: $-section-header-pad-bottom-display-2;
+  }
+}
