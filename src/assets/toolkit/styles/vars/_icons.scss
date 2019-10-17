@@ -11,3 +11,74 @@
     --icon-size-display-1: 4.8rem;
   }
 }
+
+$default-offset: 1px;
+
+$fa-icon-list: (
+  caret-down: (
+    default-set: fas,
+    icon: fa-caret-down,
+    content: $fa-var-caret-down,
+    offset: $default-offset,
+  ),
+  church: (
+    default-set: far,
+    icon: fa-church,
+    content: $fa-var-church,
+    offset: $default-offset,
+  ),
+  checkbox: (
+    default-set: fal,
+    icon: fa-square,
+    content: $fa-var-square,
+    offset: $default-offset,
+  ),
+  checkbox-on: (
+    default-set: fas,
+    icon: fa-check-square,
+    content: $fa-var-check-square,
+    offset: $default-offset,
+  ),
+  facebook: (
+    default-set: fab,
+    icon: fa-facebook-square,
+    content: $fa-var-facebook-square,
+    offset: $default-offset,
+  ),
+  map-pointer: (
+    default-set: fas,
+    icon: fa-map-marker-alt,
+    content: $fa-var-map-marker-alt,
+    offset: $default-offset,
+  ),
+  phone: (
+    default-set: fas,
+    icon: fa-phone,
+    content: $fa-var-phone,
+    offset: $default-offset,
+  ),
+  podcast: (
+    default-set: fas,
+    icon: fa-microphone,
+    content: $fa-var-microphone,
+    offset: $default-offset,
+  ),
+  radio: (
+    default-set: fal,
+    icon: fa-circle,
+    content: $fa-var-circle,
+    offset: $default-offset,
+  ),
+  radio-on: (
+    default-set: fas,
+    icon: fa-dot-circle,
+    content: $fa-var-dot-circle,
+    offset: $default-offset,
+  ),
+  youtube: (
+    default-set: fab,
+    icon: fa-youtube,
+    content: $fa-var-youtube,
+    offset: $default-offset,
+  ),
+);

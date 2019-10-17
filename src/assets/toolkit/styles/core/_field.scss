@@ -65,6 +65,7 @@
     border: 1px solid color(base, 700);
     border-radius: 1px;
     color: color(base, 200);
+
     @include transition((box-shadow, border-color));
 
     &:focus {
@@ -127,7 +128,6 @@
       &::before {
         margin-right: 10px;
         display: inline-block;
-        font-size: var(--icon-size-base);
         transform: translateY(1px);
       }
     }
@@ -153,36 +153,28 @@
 
   > input[type="checkbox"] {
     &:not(:checked) {
-      + label::before {
-        @extend .fal;
-
-        content: fa-content($fa-var-square);
+      + label {
+        @include icon-embed(checkbox);
       }
     }
 
     &:checked {
-      + label::before {
-        @extend .fas;
-
-        content: fa-content($fa-var-check-square);
+      + label {
+        @include icon-embed(checkbox-on);
       }
     }
   }
 
   > input[type="radio"] {
     &:not(:checked) {
-      + label::before {
-        @extend .fal;
-
-        content: fa-content($fa-var-circle);
+      + label {
+        @include icon-embed(radio);
       }
     }
 
     &:checked {
-      + label::before {
-        @extend .fas;
-
-        content: fa-content($fa-var-dot-circle);
+      + label {
+        @include icon-embed(radio-on);
       }
     }
   }
@@ -191,12 +183,8 @@
 .field-control--select {
   position: relative;
 
-  &::after {
-    @extend .fas;
-
-    content: fa-content($fa-var-caret-down);
+  @include icon-embed(caret-down, after, null, display-3) {
     display: block;
-    font-size: var(--icon-size-display-3);
     position: absolute;
     @include position(14px, 10px);
   }

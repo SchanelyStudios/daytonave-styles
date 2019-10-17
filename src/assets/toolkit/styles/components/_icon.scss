@@ -14,6 +14,18 @@
   }
 }
 
+.icon-before {
+  &::before {
+    margin-right: 5px;
+  }
+}
+
+.icon-after {
+  &::after {
+    margin-left: 5px;
+  }
+}
+
 ///
 /// Icon group to place on groups of icons or containers of icons for consistent styling
 ///
@@ -60,7 +72,9 @@ $icon-colors: (
 );
 @each $color in $icon-colors {
   .icon--color-#{$color},
-  .icon-group--#{$color} .icon {
+  .icon-group--color-#{$color} .icon,
+  .icon-after--color-#{$color}::after,
+  .icon-before--color-#{$color}::before {
     color: color($color);
   }
 }
@@ -84,57 +98,17 @@ $icon-sizes: (
 ///
 /// Preset icon options
 ///
-.icon--caret-down {
-  @extend .fas;
-  @extend .fa-caret-down;
-}
+@each $icon-name, $icon-config in $fa-icon-list {
+  .icon--#{$icon-name} {
+    @extend .#{map-get($icon-config, default-set)};
+    @extend .#{map-get($icon-config, icon)};
+  }
 
-.icon--church {
-  @extend .far;
-  @extend .fa-church;
-}
+  .icon-before--#{$icon-name} {
+    @include icon-embed($icon-name);
+  }
 
-.icon--checkbox {
-  @extend .fal;
-  @extend .fa-square;
-}
-
-.icon--checkbox-on {
-  @extend .fas;
-  @extend .fa-check-square;
-}
-
-.icon--facebook {
-  @extend .fab;
-  @extend .fa-facebook-square;
-}
-
-.icon--map-pointer {
-  @extend .fas;
-  @extend .fa-map-marker-alt;
-}
-
-.icon--phone {
-  @extend .fas;
-  @extend .fa-phone;
-}
-
-.icon--podcast {
-  @extend .fas;
-  @extend .fa-microphone;
-}
-
-.icon--radio {
-  @extend .fal;
-  @extend .fa-circle;
-}
-
-.icon--radio-on {
-  @extend .fas;
-  @extend .fa-dot-circle;
-}
-
-.icon--youtube {
-  @extend .fab;
-  @extend .fa-youtube;
+  .icon-after--#{$icon-name} {
+    @include icon-embed($icon-name, after);
+  }
 }

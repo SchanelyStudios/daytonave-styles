@@ -1,0 +1,24 @@
+/// Embed a icon on an element
+///
+/// Allows for embedding an icon before or after a given element
+///
+@mixin icon-embed($icon, $position: before, $fa-set: null, $size: base, $offset: null) {
+  $icon-config: map-get($fa-icon-list, $icon);
+
+  @if ($fa-set == null) {
+    $fa-set: map-get($icon-config, default-set);
+  }
+
+  @if ($offset == null) {
+    $offset: map-get($icon-config, offset);
+  }
+
+  &::#{$position} {
+    @extend .#{$fa-set};
+    content: fa-content(map-get($icon-config, content));
+    font-size: var(--icon-size-#{$size});
+    transform: translateY($offset);
+
+    @content;
+  }
+}
