@@ -9,7 +9,7 @@
     --icon-size: var(--icon-size-base);
   }
 
-  &:not([class*="icon--color-"]) {
+  &:not([class*="icon--color-"]):not(a) {
     color: color(base, 200);
   }
 }

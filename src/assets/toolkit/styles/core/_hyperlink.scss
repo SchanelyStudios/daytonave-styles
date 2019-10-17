@@ -1,4 +1,5 @@
 a {
+  &.default,
   &:not([class]) {
     display: inline-block;
     color: color(primary);

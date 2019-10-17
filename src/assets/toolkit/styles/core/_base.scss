@@ -1,5 +1,7 @@
 
-*[aria-hidden="true"] {
+*[aria-hidden="true"],
+.visually-hidden {
+  display: inline-block;
   overflow: hidden;
   height: 0;
   width: 0;
