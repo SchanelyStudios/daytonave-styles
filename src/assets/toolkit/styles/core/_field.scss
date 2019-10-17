@@ -14,18 +14,26 @@
 
 .field__feedback {
   margin-top: baseline(.5);
+  display: none;
 
   > p {
     @extend %type-base-em;
     @extend %type-block-base-em;
   }
 
+  .field--feedback & {
+    color: color(base);
+    display: block;
+  }
+
   .field--success & {
     color: color(secondary);
+    display: block;
   }
 
   .field--error & {
     color: color(accent);
+    display: block;
   }
 
   margin-bottom: 10px;
@@ -37,8 +45,13 @@
 }
 
 .field-control {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
   > input[type="text"],
   > input[type="email"],
+  > select,
   > textarea {
     @extend %type-base;
 
@@ -48,45 +61,143 @@
     padding-left: $grid-pad-half - 1px;
     width: 100%;
     display: block;
+    box-sizing: border-box;
     border: 1px solid color(base, 700);
     border-radius: 1px;
     color: color(base, 200);
+    @include transition((box-shadow, border-color));
 
     &:focus {
-      @include focus-box();
+      border-color: color(primary);
+      outline: none;
+      box-shadow: 0 0 0 2px color(primary);
     }
 
     .field--success & {
       border-color: color(secondary);
+
+      &:focus {
+        box-shadow: 0 0 0 2px color(secondary);
+      }
     }
 
     .field--error & {
       border-color: color(accent);
+
+      &:focus {
+        box-shadow: 0 0 0 2px color(accent);
+      }
+    }
+
+    .field--disabled &,
+    &[disabled="disabled"] {
+      border-color: color(base, 600);
+      background-color: color(base, 900);
+      color: color(base, 600);
+      pointer-events: none;
+
+      &:focus {
+        &:focus {
+          box-shadow: 0 0 0 2px color(base);
+        }
+      }
     }
   }
 
   > select {
-    @extend %type-base;
-
-    width: 100%;
-    height: 30px;
-    border: 1px solid color(base);
-    border-radius: 1px;
-
-    &:focus {
-      @include focus-box();
-    }
-
-    .field--success & {
-      border-color: color(secondary);
-    }
-
-    .field--error & {
-      border-color: color(accent);
-    }
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   > textarea {
     min-height: baseline(5.5);
+  }
+
+  > input[type="checkbox"],
+  > input[type="radio"] {
+    opacity: 0;
+    height: 0;
+    width: 0;
+
+    + label {
+      @extend %type-base;
+      @extend %type-block-base;
+
+      &::before {
+        margin-right: 10px;
+        display: inline-block;
+        font-size: var(--icon-size-base);
+        transform: translateY(1px);
+      }
+    }
+
+    &:not(:checked):not(:focus) {
+      + label::before {
+        color: color(base, 600);
+      }
+    }
+
+    &:checked {
+      + label::before {
+        color: color(base, 200);
+      }
+    }
+
+    &:focus {
+      + label::before {
+        color: color(primary);
+      }
+    }
+  }
+
+  > input[type="checkbox"] {
+    &:not(:checked) {
+      + label::before {
+        @extend .fal;
+
+        content: fa-content($fa-var-square);
+      }
+    }
+
+    &:checked {
+      + label::before {
+        @extend .fas;
+
+        content: fa-content($fa-var-check-square);
+      }
+    }
+  }
+
+  > input[type="radio"] {
+    &:not(:checked) {
+      + label::before {
+        @extend .fal;
+
+        content: fa-content($fa-var-circle);
+      }
+    }
+
+    &:checked {
+      + label::before {
+        @extend .fas;
+
+        content: fa-content($fa-var-dot-circle);
+      }
+    }
+  }
+}
+
+.field-control--select {
+  position: relative;
+
+  &::after {
+    @extend .fas;
+
+    content: fa-content($fa-var-caret-down);
+    display: block;
+    font-size: var(--icon-size-display-3);
+    position: absolute;
+    @include position(14px, 10px);
   }
 }
