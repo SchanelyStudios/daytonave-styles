@@ -93,3 +93,11 @@
 @function grid-width($value: 12) {
   @return $grid-unit * $value;
 }
+
+/// Get grid-based width value
+///
+/// @param {String} $value [base] The number of columns
+///
+@function grid-width-minus($value: 12, $value-minus: 0) {
+  @return ($grid-unit * $value) - $value-minus;
+}

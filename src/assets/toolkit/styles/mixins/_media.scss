@@ -6,8 +6,6 @@
   $from: breakpoint($min-viewport, min);
   $to: breakpoint($max-viewport, max);
 
-  @debug "Media query from #{$from} to #{$to}";
-
   @if ($from and $to) {
     @media (min-width: $from) and (max-width: $to) {
       @content;
@@ -39,8 +37,6 @@
   $from: breakpoint($viewport, min);
   $to: breakpoint($viewport, max);
 
-  @debug "Media query for #{$viewport}: #{$from} to #{$to}";
-
   @include media($from, $to) {
     @content;
   }
@@ -52,8 +48,6 @@
 ///
 @mixin media-max($max-viewport) {
   $to: breakpoint($max-viewport, max);
-
-  @debug "Max query for #{$to}";
 
   @if ($to) {
     @media (max-width: $to) {
@@ -72,8 +66,6 @@
 ///
 @mixin media-min($min-viewport) {
   $from: breakpoint($min-viewport, min);
-
-  @debug "Min Media query for #{$from}";
 
   @if ($from) {
     @media (min-width: $from) {

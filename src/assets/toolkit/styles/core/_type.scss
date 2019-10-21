@@ -62,8 +62,10 @@ h6:not([class]) {
 }
 
 li {
-  @extend %type-base;
-  @extend %type-block-base;
+  &:not([class]) {
+    @extend %type-base;
+    @extend %type-block-base;
+  }
 }
 
 p {

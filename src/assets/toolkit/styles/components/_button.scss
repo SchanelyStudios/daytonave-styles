@@ -2,18 +2,10 @@ button:not(.unstyled),
 .btn {
   @extend %type-label;
 
-  padding-top: calc(#{baseline(.5)} + #{type-pad-top(base)});
-  padding-bottom: calc(#{baseline(.5)} + #{type-pad-bottom(base)});
-  padding-left: $grid-pad;
-  padding-right: $grid-pad;
-  display: inline-block;
   border: none;
   outline: none;
-  background-color: color(primary);
-  color: color(white);
-  position: relative;
-  border-radius: 1px;
   text-decoration: none;
+  position: relative;
 
   @include transition((background-color, color));
 
@@ -41,6 +33,22 @@ button:not(.unstyled),
     &::after {
       opacity: 1;
     }
+  }
+
+  &:not(.btn--clean) {
+    padding-top: calc(#{baseline(.5)} + #{type-pad-top(base)});
+    padding-bottom: calc(#{baseline(.5)} + #{type-pad-bottom(base)});
+    padding-left: $grid-pad;
+    padding-right: $grid-pad;
+    display: inline-block;
+    background-color: color(primary);
+    color: color(white);
+    position: relative;
+    border-radius: 1px;
+  }
+
+  &.btn--clean {
+    background-color: transparent;
   }
 
   &.btn--flat {
