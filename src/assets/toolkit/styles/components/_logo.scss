@@ -1,0 +1,70 @@
+.logo {
+  width: 100%;
+  max-width: 340px;
+
+  svg {
+    width: 100%;
+  }
+}
+
+.logo--inline {
+  max-width: 400px;
+}
+
+.logo--wordmark {
+  min-width: 185px;
+  max-width: 290px;
+
+  .masthead & {
+
+    @include media-max(599px) {
+      padding-top: 14px;
+      padding-bottom: baseline();
+    }
+
+    @include media(600px, 1264px) {
+      padding-top: 34px;
+      padding-bottom: baseline(2);
+    }
+
+    @include media-max(1264px) {
+      width: 185px;
+      height: 46px;
+    }
+
+    @include media-min(1265px) {
+      padding-top: 47px;
+      padding-bottom: baseline(2);
+      width: 290px;
+      height: 73px;
+    }
+  }
+}
+
+.logo__church {
+  fill: color(base, 200);
+
+  .logo--mono-light & {
+    fill: color(white);
+  }
+
+  .logo--mono-dark & {
+    fill: color(base, 200);
+  }
+}
+
+.logo__dayton-ave {
+  fill: color(primary);
+
+  .logo--mono-light & {
+    fill: color(white);
+  }
+
+  .logo--mono-dark & {
+    fill: color(base, 200);
+  }
+}
+
+.logo__text {
+  @include visually-hidden;
+}
