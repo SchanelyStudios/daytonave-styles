@@ -1,39 +1,57 @@
 <header class="masthead">
-  <h1 class="masthead__brand">Dayton Avenue Baptist Church</h1>
+  {{> logos.wordmark-mono}}
+  <nav class="masthead__nav-main">
+    <h2 class="visually-hidden">Main Navigation Link</h2>
+    <ul class="nav">
+      <li class="nav__item">
+        <a class="nav__link" href="#home">Home</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="#about">About</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="#ministries">Ministries</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="#media">Media</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="#calendar">Calendar</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
   <address class="masthead__address">
     <p class="masthead__address__phone icon-before icon-before--phone">(937) 376-8223</p>
     <p class="masthead__address__street icon-before icon-before--map-pointer">1121 Dayton Avenue, Xenia, OH</p>
   </address>
-  <nav class="masthead__nav-main">
-    <h2 class="visually-hidden">Main Navigation Link</h2>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#ministries">Ministries</a></li>
-      <li><a href="#media">Media</a></li>
-      <li><a href="#calendar">Calendar</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
   <nav class="masthead__nav-sub">
-    <a href="#giving">Giving</a>
+    <a class="nav nav--standalone" href="#giving">Giving</a>
     <h2 class="visually-hidden">Media and Social Links</h2>
-    <ul>
-      <li>
-        <a href="#podcast" class="default icon icon--podcast">
+    <ul class="nav nav--socials">
+      <li class="nav__item">
+        <a href="#podcast" class="nav__link default icon icon--podcast">
           <span class="visually-hidden">Podcast</span>
         </a>
       </li>
       <li>
-        <a href="#youtube" class="default icon icon--youtube">
+        <a href="#youtube" class="nav__link default icon icon--youtube">
           <span class="visually-hidden">Youtube</span>
         </a>
       </li>
       <li>
-        <a href="#facebook" class="default icon icon--facebook">
+        <a href="#facebook" class="nav__link default icon icon--facebook">
           <span class="visually-hidden">Facebook</span>
         </a>
       </li>
     </ul>
   </nav>
+  <button class="btn--clean masthead__menu-icon">
+    <i class="icon icon--menu-bars"></i>
+  </button>
+  <button class="btn--clean masthead__menu-icon masthead__menu-icon--close">
+    <i class="icon icon--menu-bars"></i>
+  </button>
 </header>

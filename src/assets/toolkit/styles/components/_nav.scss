@@ -1,0 +1,21 @@
+.nav {
+  padding: baseline(.5) $grid-pad;
+  display: block;
+}
+
+.nav__item {
+  @extend %type-display-3;
+}
+
+.nav__link {
+  margin-top: 5px;
+  padding-top: calc(var(--pad-top-level-3) - 5px);
+  padding-bottom: var(--pad-bottom-level-3);
+
+  margin-right: -$grid-pad-half;
+  margin-left: -$grid-pad-half;
+  padding-right: $grid-pad-half;
+  padding-left: $grid-pad-half;
+  display: block;
+  border-radius: 2px;
+}

@@ -1,0 +1,102 @@
+.masthead {
+  padding-right: $grid-pad;
+  padding-left: $grid-pad;
+  display: grid;
+  grid-column-gap: $grid-pad;
+  background-color: color(primary, 300);
+  color: color(primary, 900);
+  opacity: .5;
+
+  @include media-max(599px) {
+    grid-template-columns: 1fr 40px;
+    grid-template-areas:
+      "brand    menu-icon"
+      "nav-main nav-main"
+      "address  address"
+      "nav-sub  nav-sub";
+    grid-template-rows: baseline(4) 1fr baseline(4) baseline(4);
+  }
+
+  @include media(600px, 959px) {
+    grid-template-columns: grid-width(2) auto 50px;
+    grid-template-areas:
+      "brand    address  menu-icon"
+      "nav-main nav-main nav-main"
+      "nav-sub  nav-sub  nav-sub";
+    grid-template-rows: baseline(6) 1fr baseline(5);
+  }
+
+  @include media-max(959px) {
+    height: 100vh;
+  }
+
+  @include media-min(960px) {
+    grid-template-areas:
+      "brand address  nav-sub"
+      "brand nav-main nav-main";
+  }
+
+  @include media(960px, 1264px) {
+    grid-template-columns: grid-width(2) 1fr auto;
+    grid-template-rows: baseline(3) baseline(3);
+  }
+
+  @include media(1265px) {
+    grid-template-columns: grid-width(3) 1fr auto;
+    grid-template-rows: baseline(4) baseline(4);
+  }
+
+  a {
+    color: color(primary, 800);
+    text-decoration: none;
+
+    &:hover {
+      color: color(white);
+    }
+
+    &:focus {
+      background-color: transparent;
+      color: color(primary, 800);
+
+      @include focus-box(color(primary, 800));
+    }
+  }
+}
+
+.masthead__menu-icon {
+  grid-area: menu-icon;
+
+  @include media-min(960px) {
+    display: none;
+  }
+}
+
+.masthead__address {
+  grid-area: address;
+
+  @include media-max(599px) {
+    margin-right: -$grid-pad;
+    margin-left: -$grid-pad;
+    background-color: color(primary, 100);
+  }
+}
+
+.masthead__nav-sub {
+  grid-area: nav-sub;
+  margin-right: -$grid-pad;
+  margin-left: -$grid-pad;
+
+  @include media-max(959px) {
+    background-color: color(primary, 100);
+  }
+}
+
+.masthead__nav-main {
+  grid-area: nav-main;
+  margin-right: -$grid-pad;
+  margin-left: -$grid-pad;
+
+  @include media-max(959px) {
+    background-color: color(primary, 200);
+  }
+}

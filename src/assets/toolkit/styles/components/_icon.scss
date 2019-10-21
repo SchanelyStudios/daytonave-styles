@@ -9,8 +9,16 @@
     --icon-size: var(--icon-size-base);
   }
 
-  &:not([class*="icon--color-"]):not(a) {
-    color: color(base, 200);
+  .masthead__menu-icon > & {
+    color: color(white);
+
+    @include media-max(599px) {
+      font-size: 3.6rem;
+    }
+
+    @include media-min(600px) {
+      font-size: 5rem;
+    }
   }
 }
 

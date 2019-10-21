@@ -39,6 +39,12 @@ $fa-icon-list: (
     content: $fa-var-check-square,
     offset: $default-offset,
   ),
+  close: (
+    default-set: fas,
+    icon: fa-times,
+    content: $fa-var-times,
+    offset: $default-offset,
+  ),
   facebook: (
     default-set: fab,
     icon: fa-facebook-square,
@@ -50,6 +56,12 @@ $fa-icon-list: (
     icon: fa-map-marker-alt,
     content: $fa-var-map-marker-alt,
     offset: $default-offset,
+  ),
+  menu-bars: (
+    default-set: fas,
+    icon: fa-bars,
+    content: $fa-var-bars,
+    offset: #default-offset,
   ),
   phone: (
     default-set: fas,
