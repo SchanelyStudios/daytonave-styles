@@ -1,6 +1,4 @@
-.households-wrapper {
-  border: 1px dotted grey;
-}
+.households-wrapper {}
 
 .households {
   display: flex;
@@ -11,23 +9,55 @@
   width: calc(50% - 20px);
   box-sizing: border-box;
   margin: 10px;
-  padding: 10px;
-  border: 1px solid black;
+  padding: 9px;
+  border: 1px solid color(base, 800);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: baseline(2) auto 25px auto;
+  grid-column-gap: 10px;
   grid-template-areas:
-    "img img sur     sur"
-    "img img members contact";
+    "sur     img"
+    "members img"
+    "other   phone"
+    "other   email"
 }
 
 .household__surname {
+  @extend %type-display-3;
+  @extend %type-block-display-3;
+
+  overflow: hidden;
   grid-area: sur;
 }
 
-.household__contact {
-  grid-area: contact;
+.household__email {
+  @extend %type-base;
+
+  padding-bottom: type-pad-top(base);
   overflow: hidden;
+  grid-area: email;
+}
+
+.household__phone {
+  @extend %type-base;
+
+  padding-top: type-pad-top(base);
+  overflow: hidden;
+  grid-area: phone;
+}
+
+.household__contact-other {
+  @extend %type-block-base;
+
+  overflow: hidden;
+  grid-area: other;
+
+  > p {
+    @extend %type-base;
+
+    text-indent: -$grid-pad-half;
+    padding-left: $grid-pad-half;
+  }
 }
 
 .household__image {
@@ -40,5 +70,8 @@
 }
 
 .household__members {
+  @extend %type-lead;
+  @extend %type-block-lead;
+
   grid-area: members;
 }

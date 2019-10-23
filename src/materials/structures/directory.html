@@ -14,15 +14,12 @@
             <li class="person">{{ this }}</li>
           {{/each}}
         </ul>
-        <div class="household__contact">
-          <p>
-            {{ street }}
-            <br/>
-            {{ city }}, {{ state }} {{ zip }}
-          </p>
-          <p>{{ phone }}</p>
-          <p>{{ email }}</p>
+        <p class="household__phone">{{ phone }}</p>
+        <div class="household__contact-other">
+          <p class="household__contact-misc">{{ street }}</p>
+          <p class="household__contact-misc">{{ city }}, {{ state }} {{ zip }}</p>
         </div>
+        <p class="household__email">{{ email }}</p>
       </li>
     {{/each}}
   </ul>

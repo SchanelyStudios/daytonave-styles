@@ -40,3 +40,23 @@ households:
     children:
       - "Ethan"
       - "Abby"
+  4:
+    surname: "Anthony"
+    phone: "(937) 620-6129"
+    email: "philschanely@gmail.com"
+    street: "3415 Wildflower Place"
+    city: "Cedarville"
+    state: "OH"
+    zip: "45314"
+    photo_url: "https://placehold.it/600x400"
+    adults:
+      - "Nathan"
+      - "Carrie"
+    children:
+      - "Charis"
+      - "Carter"
+      - "Reese"
+      - "Reagan"
+      - "Rubioopolis"
+      - "Rubioopolis"
+      - "Rubioopolis"

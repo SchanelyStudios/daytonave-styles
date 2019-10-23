@@ -68,7 +68,7 @@ li {
   }
 }
 
-p {
+p:not([class]) {
   @extend %type-base;
   @extend %type-block-base;
 }
