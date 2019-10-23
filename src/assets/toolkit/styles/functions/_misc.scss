@@ -88,10 +88,19 @@
 
 /// Get grid-based width value
 ///
-/// @param {String} $value [base] The number of columns
+/// @param {String} $value [12] The number of columns
+/// @param {Boolean} $include-gutters [true] Whether or not to include gutters
 ///
-@function grid-width($value: 12) {
-  @return $grid-unit * $value;
+@function grid-width($value: 12, $include-gutters: true) {
+  $width: $grid-unit * $value;
+
+  @if ($include-gutters) {
+    @return $width;
+  }
+
+  @else {
+    @return $width - $grid-gutter;
+  }
 }
 
 /// Get grid-based width value
