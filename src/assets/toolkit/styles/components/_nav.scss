@@ -1,6 +1,6 @@
 .nav {
   @include media-max(959px) {
-    padding: baseline(.5) $grid-pad;
+    padding: baseline() $grid-pad;
     display: block;
   }
 
@@ -10,17 +10,31 @@
   }
 }
 
+.nav--socials {
+  display: flex;
+  justify-content: center;
+}
+
 .nav__item {
   display: block;
 
-  &:not(:last-child) {
-    @include media-min(960px) {
-      margin-right: $grid-gutter;
+  .nav--main & {
+    @extend %type-display-3;
+
+    padding-top: 5px;
+
+    &:not(:last-child) {
+      margin-bottom: baseline(.5);
+
+      @include media-min(960px) {
+        margin-right: $grid-gutter;
+      }
     }
   }
 
-  .nav--main & {
-    @extend %type-display-3;
+  .nav--socials & {
+    margin-right: $grid-pad-half;
+    margin-left: $grid-pad-half;
   }
 }
 
@@ -33,7 +47,6 @@
   border-radius: 2px;
 
   .nav--main & {
-    margin-top: 5px;
     padding-top: calc(var(--pad-top-level-3) - 5px);
     padding-bottom: var(--pad-bottom-level-3);
     border-style: solid;
@@ -57,6 +70,14 @@
 }
 
 .nav__link--standalone {
+  @extend %type-base;
+  @extend %type-block-base;
+
+  @include media-max(959px) {
+    margin-right: $grid-pad;
+    margin-left: $grid-pad;
+  }
+
   &:not(:last-child) {
     @include media-min(960px) {
       margin-right: $grid-gutter;

@@ -14,7 +14,7 @@
       "nav-main nav-main"
       "address  address"
       "nav-sub  nav-sub";
-    grid-template-rows: baseline(4) 1fr baseline(4) baseline(4);
+    grid-template-rows: baseline(4.5) 1fr baseline(4) baseline(4);
   }
 
   @include media(600px, 959px) {
@@ -72,7 +72,10 @@
 }
 
 .masthead__address {
+
+  padding-top: baseline();
   grid-area: address;
+  text-align: center;
 
   @include media-max(599px) {
     margin-right: -$grid-pad;
@@ -92,6 +95,9 @@
 
 .masthead__address__phone,
 .masthead__address__street {
+  @extend %type-block-base;
+  @extend %type-base;
+
   &::before {
     @include media(600px, 959px) {
       display: none;
@@ -112,6 +118,7 @@
     margin-right: -$grid-pad;
     margin-left: -$grid-pad;
     background-color: color(primary, 100);
+    text-align: center;
   }
 
   @include media-min(960px) {
