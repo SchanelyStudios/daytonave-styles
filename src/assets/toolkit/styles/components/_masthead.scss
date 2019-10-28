@@ -2,10 +2,9 @@
   padding-right: $grid-pad;
   padding-left: $grid-pad;
   display: grid;
-  grid-column-gap: $grid-gutter;
+  grid-column-gap: 30px;
   background-color: color(primary, 300);
   color: color(primary, 900);
-  opacity: .5;
 
   @include media-max(599px) {
     grid-template-columns: 1fr 40px;
@@ -14,7 +13,7 @@
       "nav-main nav-main"
       "address  address"
       "nav-sub  nav-sub";
-    grid-template-rows: baseline(4.5) 1fr baseline(4) baseline(4);
+    grid-template-rows: baseline(4) 1fr baseline(4) baseline(4.5);
   }
 
   @include media(600px, 959px) {
@@ -23,7 +22,7 @@
       "brand    address  menu-icon"
       "nav-main nav-main nav-main"
       "nav-sub  nav-sub  nav-sub";
-    grid-template-rows: baseline(6) 1fr baseline(5);
+    grid-template-rows: baseline(6) 1fr baseline(5.5);
   }
 
   @include media-max(959px) {
@@ -37,13 +36,15 @@
   }
 
   @include media(960px, 1264px) {
+    padding-top: baseline();
     grid-template-columns: grid-width(2, false) 1fr auto;
-    grid-template-rows: baseline(3) baseline(3);
+    grid-template-rows: baseline(2) baseline(3);
   }
 
   @include media(1265px) {
+    padding-top: baseline(1.5);
     grid-template-columns: grid-width(3, false) 1fr auto;
-    grid-template-rows: baseline(4) baseline(4);
+    grid-template-rows: baseline(3) baseline(3.5);
   }
 
   a {
@@ -64,7 +65,15 @@
 }
 
 .masthead__menu-icon {
+  padding-left: 0;
+  padding-right: 0;
   grid-area: menu-icon;
+  text-align: center;
+  align-self: center;
+
+  @include media(600px, 959px) {
+    height: baseline(3);
+  }
 
   @include media-min(960px) {
     display: none;
@@ -72,19 +81,19 @@
 }
 
 .masthead__address {
-
-  padding-top: baseline();
   grid-area: address;
   text-align: center;
 
   @include media-max(599px) {
     margin-right: -$grid-pad;
     margin-left: -$grid-pad;
+    padding-top: baseline();
     background-color: color(primary, 100);
   }
 
   @include media(600px, 959px) {
     text-align: right;
+    align-self: center;
   }
 
   @include media-min(960px) {
@@ -99,7 +108,7 @@
   @extend %type-base;
 
   &::before {
-    @include media(600px, 959px) {
+    @include media-max(959px) {
       display: none;
     }
   }
@@ -119,6 +128,10 @@
     margin-left: -$grid-pad;
     background-color: color(primary, 100);
     text-align: center;
+  }
+
+  @include media(600px, 959px) {
+    padding-top: baseline();
   }
 
   @include media-min(960px) {

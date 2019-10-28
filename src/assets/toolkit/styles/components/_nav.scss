@@ -1,3 +1,5 @@
+$-nav-main-item-focus-top-offset: 4px;
+
 .nav {
   @include media-max(959px) {
     padding: baseline() $grid-pad;
@@ -12,22 +14,50 @@
 
 .nav--socials {
   display: flex;
-  justify-content: center;
+
+  @include media-max(959px) {
+    justify-content: center;
+  }
+
+  @include media-min(960px) {
+    justify-content: flex-end;
+    margin-right: -$grid-pad-half;
+  }
+}
+
+.nav--main {
+  @include media-max(959px) {
+    padding: baseline() $grid-pad;
+  }
+}
+
+.nav--socials {
+  @include media-max(959px) {
+    padding: baseline(.5) $grid-pad;
+  }
+
+  @include media-min(960px) {
+    padding: 7px 0 0;
+  }
 }
 
 .nav__item {
   display: block;
 
   .nav--main & {
-    @extend %type-display-3;
+    @extend %type-display-4;
 
-    padding-top: 5px;
+    padding-top: $-nav-main-item-focus-top-offset;
 
     &:not(:last-child) {
       margin-bottom: baseline(.5);
 
-      @include media-min(960px) {
+      @include media(960px, 1264px) {
         margin-right: $grid-gutter;
+      }
+
+      @include media-min(1265px) {
+        margin-right: $grid-gutter * 2;
       }
     }
   }
@@ -47,16 +77,25 @@
   border-radius: 2px;
 
   .nav--main & {
-    padding-top: calc(var(--pad-top-level-3) - 5px);
-    padding-bottom: var(--pad-bottom-level-3);
     border-style: solid;
 
     @include media-max(959px) {
+      padding-top: calc(var(--pad-top-level-4) - #{$-nav-main-item-focus-top-offset});
+      padding-bottom: var(--pad-bottom-level-4);
       border-width: 0 0 0 6px;
     }
 
     @include media-min(960px) {
-      border-width: 0 0 6px 0;
+      padding-top: calc(var(--pad-top-level-4) - #{$-nav-main-item-focus-top-offset});
+      border-width: 0 0 10px 0;
+    }
+
+    @include media(960px, 1264px) {
+      padding-bottom: calc(var(--pad-bottom-level-4) + #{baseline(.5)});
+    }
+
+    @include media-min(1265px) {
+      padding-bottom: calc(var(--pad-bottom-level-4) + #{baseline()});
     }
   }
 

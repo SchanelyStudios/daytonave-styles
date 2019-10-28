@@ -33,7 +33,6 @@
 @function breakpoint($value, $position: null) {
   // If value is a length, stop here and return it
   @if (type-of($value) == number) {
-    @debug "--- Number provided: #{$value}";
     @return $value;
   }
 
@@ -42,16 +41,13 @@
   $position-value: null;
   @if ($breakpoint) {
     // Look for position in breakpoint
-    @debug "--- Breakpoint found: #{$value}";
     $position-value: map-get($breakpoint, $position);
   }
 
   @if ($position-value) {
-    @debug "--- Position value found: #{$position-value}";
     @return $position-value;
   }
 
-  @debug "--- X No breakpoint found for #{$value} and #{$position}";
   @return null;
 }
 

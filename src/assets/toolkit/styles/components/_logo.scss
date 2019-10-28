@@ -16,27 +16,33 @@
   max-width: 290px;
 
   .masthead & {
+    grid-area: brand;
+    padding-top: 4px;
+    align-self: center;
 
-    @include media-max(599px) {
-      padding-top: 14px;
-      padding-bottom: baseline();
+    @include media-max(599px) {}
+
+    @include media(600px, 1079px) {
+      transform: translateY(-5px);
     }
 
-    @include media(600px, 1264px) {
-      padding-top: 34px;
-      padding-bottom: baseline(2);
-    }
-
-    @include media-max(1264px) {
+    @include media-max(1079px) {
       width: 185px;
       height: 46px;
     }
 
-    @include media-min(1265px) {
-      padding-top: 47px;
-      padding-bottom: baseline(2);
+    @include media-min(1080px) {
+      transform: translateY(-13px);
       width: 290px;
       height: 73px;
+    }
+
+    @include media(1080px, 1264px) {
+      transform: translateY(-17px);
+    }
+
+    @include media-min(1265px) {
+      transform: translateY(-13px);
     }
   }
 }
