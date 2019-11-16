@@ -41,10 +41,14 @@
     grid-template-rows: baseline(2) baseline(3);
   }
 
-  @include media(1265px) {
+  @include media-min(1265px) {
     padding-top: baseline(1.5);
     grid-template-columns: grid-width(3, false) 1fr auto;
     grid-template-rows: baseline(3) baseline(3.5);
+  }
+
+  @include media(1440px) {
+    @include center-pad(1400px);
   }
 
   a {
