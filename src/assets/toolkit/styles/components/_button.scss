@@ -5,6 +5,7 @@ button:not(.unstyled),
   border: none;
   outline: none;
   text-decoration: none;
+  text-align: center;
   position: relative;
 
   @include transition((background-color, color));
