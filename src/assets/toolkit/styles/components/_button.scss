@@ -31,7 +31,7 @@ button:not(.btn--clean),
     background-color: color(primary);
     color: color(white);
     position: relative;
-    border-radius: 1px;
+    border-radius: 2px;
 
     &:hover {
       background-color: color(primary, 400);
