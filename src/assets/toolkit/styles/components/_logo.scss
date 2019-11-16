@@ -15,12 +15,35 @@
   min-width: 185px;
   max-width: 290px;
 
+  .footer & {
+    grid-area: brand;
+
+    @include media-max(719px) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @include media-min(720px) {
+      margin-left: auto;
+    }
+
+    @include media-max(1079px) {
+      padding-top: 4px;
+      width: 185px;
+      height: 46px;
+    }
+
+    @include media-min(1080px) {
+      padding-top: 8px;
+      width: 290px;
+      height: 72px;
+    }
+  }
+
   .masthead & {
     grid-area: brand;
     padding-top: 4px;
     align-self: center;
-
-    @include media-max(599px) {}
 
     @include media(600px, 1079px) {
       transform: translateY(-5px);

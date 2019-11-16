@@ -1,0 +1,115 @@
+.footer {
+  background-color: color(primary, 800);
+  display: grid;
+
+  @include media-max(359px) {
+    padding-right: $grid-pad;
+    padding-left: $grid-pad;
+  }
+
+  @include media(360px, 719px) {
+    @include center-pad(320px);
+  }
+
+  @include media-max(719px) {
+    padding-top: baseline(2.5);
+    padding-bottom: baseline(2.5);
+    grid-template-columns: 1fr;
+    grid-column-gap: $grid-pad-half;
+    grid-row-gap: baseline(1.5);
+    grid-template-areas:
+      "brand"
+      "members"
+      "socials"
+      "terms"
+      "copyright";
+  }
+
+  @include media-min(720px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: $grid-gutter;
+    grid-row-gap: baseline(.5);
+    grid-template-areas:
+      "brand     members"
+      "copyright members"
+      "socials   terms";
+
+    @include center-pad(680px);
+  }
+
+  @include media(720px, 1079px) {
+    padding-top: baseline(4.5);
+    padding-bottom: baseline(4);
+  }
+
+  @include media-min(1080px) {
+    padding-top: baseline(3.5);
+    padding-bottom: baseline(3.5);
+  }
+
+  a {
+    color: color(base, 100);
+  }
+}
+
+// NOTE: footer brand is in _logo.scss
+
+.footer__copyright {
+  grid-area: copyright;
+
+  @include media-max(719px) {
+    text-align: center;
+  }
+
+  @include media-min(720px) {
+    text-align: right;
+  }
+}
+
+.footer__members {
+  grid-area: members;
+
+  @include media-max(719px) {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+}
+
+.footer__members__cta {
+  margin-right: auto;
+  margin-bottom: baseline(.5);
+  margin-left: auto;
+  width: calc(100% - #{$grid-gutter * 2});
+
+  @include media-min(1080px) {
+    margin-top: baseline(1.5);
+  }
+}
+
+.footer__members__description {
+  @extend %type-base;
+  @extend %type-block-base;
+
+  @include media-max(719px) {
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+  }
+
+  @include media-min(720px) {
+    width: 230px;
+    text-align: left;
+  }
+}
+
+.footer__privacy-terms {
+  grid-area: terms;
+
+  @include media-max(719px) {
+    text-align: center;
+  }
+}
+
+.footer__socials {
+  grid-area: socials;
+}

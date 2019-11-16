@@ -1,6 +1,39 @@
 $-nav-main-item-focus-top-offset: 4px;
 
 .nav {
+}
+
+.nav--socials {
+  display: flex;
+
+  @include media-max(959px) {
+    padding: baseline(.5) $grid-pad;
+    justify-content: center;
+  }
+
+  @include media-min(960px) {
+    margin-right: -$grid-pad-half;
+    padding: 7px 0 0;
+    justify-content: flex-end;
+  }
+}
+
+.nav--footer-socials {
+  display: flex;
+
+  @include media-max(719px) {
+    justify-content: center;
+  }
+
+  @include media-min(720px) {
+    margin-right: -9px;
+    padding-top: 6px;
+    padding-bottom: 4px;
+    justify-content: flex-end;
+  }
+}
+
+.nav--main {
   @include media-max(959px) {
     padding: baseline() $grid-pad;
     display: block;
@@ -9,35 +42,6 @@ $-nav-main-item-focus-top-offset: 4px;
   @include media-min(960px) {
     display: flex;
     justify-content: flex-end;
-  }
-}
-
-.nav--socials {
-  display: flex;
-
-  @include media-max(959px) {
-    justify-content: center;
-  }
-
-  @include media-min(960px) {
-    justify-content: flex-end;
-    margin-right: -$grid-pad-half;
-  }
-}
-
-.nav--main {
-  @include media-max(959px) {
-    padding: baseline() $grid-pad;
-  }
-}
-
-.nav--socials {
-  @include media-max(959px) {
-    padding: baseline(.5) $grid-pad;
-  }
-
-  @include media-min(960px) {
-    padding: 7px 0 0;
   }
 }
 
@@ -62,7 +66,8 @@ $-nav-main-item-focus-top-offset: 4px;
     }
   }
 
-  .nav--socials & {
+  .nav--socials &,
+  .nav--footer-socials & {
     margin-right: $grid-pad-half;
     margin-left: $grid-pad-half;
   }
@@ -112,14 +117,16 @@ $-nav-main-item-focus-top-offset: 4px;
   @extend %type-base;
   @extend %type-block-base;
 
-  @include media-max(959px) {
-    margin-right: $grid-pad;
-    margin-left: $grid-pad;
-  }
+  .masthead & {
+    @include media-max(959px) {
+      margin-right: $grid-pad;
+      margin-left: $grid-pad;
+    }
 
-  &:not(:last-child) {
-    @include media-min(960px) {
-      margin-right: $grid-gutter;
+    &:not(:last-child) {
+      @include media-min(960px) {
+        margin-right: $grid-gutter;
+      }
     }
   }
 }
