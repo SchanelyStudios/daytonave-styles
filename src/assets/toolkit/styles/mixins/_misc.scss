@@ -14,14 +14,8 @@
 /// Centers an element using padding calculated from a max width.
 ///
 @mixin center-pad($width, $pad: 0, $addBoxSizing: true) {
-  $widthValue: map-get($widths, $width);
-
-  @if (not $widthValue) {
-    $widthValue: $width;
-  }
-
-  padding-right: center-pad-value($widthValue, $pad);
-  padding-left: center-pad-value($widthValue, $pad);
+  padding-right: center-pad-value($width, $pad);
+  padding-left: center-pad-value($width, $pad);
 
   @if ($addBoxSizing) {
     box-sizing: border-box;
