@@ -1,4 +1,4 @@
-button:not(.unstyled),
+button:not(.btn--clean),
 .btn {
   @extend %type-label;
 
@@ -13,27 +13,13 @@ button:not(.unstyled),
   &::after {
     display: block;
     content: "";
-    border: 2px solid color(primary, 800);
-    border-radius: 3px;
+    border: 2px solid color(primary);
+    border-radius: 5px;
     position: absolute;
     opacity: 0;
 
-    @include position(-2px, -2px, -2px, -2px);
+    @include position(-4px, -4px, -4px, -4px);
     @include transition(opacity);
-  }
-
-  &:hover {
-    background-color: color(primary, 400);
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  &:focus {
-    background-color: color(primary, 400);
-
-    &::after {
-      opacity: 1;
-    }
   }
 
   &:not(.btn--clean) {
@@ -46,19 +32,33 @@ button:not(.unstyled),
     color: color(white);
     position: relative;
     border-radius: 1px;
+
+    &:hover {
+      background-color: color(primary, 400);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &:focus {
+      background-color: color(primary, 400);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &.btn--flat {
+      color: color(primary, 400);
+      background-color: transparent;
+
+      &:hover {
+        background-color: color(primary, 900);
+      }
+    }
   }
 
   &.btn--clean {
     background-color: transparent;
-  }
-
-  &.btn--flat {
-    color: color(primary, 400);
-    background-color: transparent;
-
-    &:hover {
-      background-color: color(primary, 900);
-    }
   }
 
   @each $color-name, $color-set in $colors {
@@ -66,10 +66,14 @@ button:not(.unstyled),
       background-color: color($color-name);
 
       &::after {
-        border-color: color($color-name, 800);
+        border-color: color($color-name);
       }
 
       &:hover {
+        background-color: color($color-name, 400);
+      }
+
+      &:focus {
         background-color: color($color-name, 400);
       }
 
