@@ -59,6 +59,8 @@ h6:not([class]) {
 .lead {
   @extend %type-lead;
   @extend %type-block-lead;
+
+  margin-bottom: baseline(.5);
 }
 
 li {

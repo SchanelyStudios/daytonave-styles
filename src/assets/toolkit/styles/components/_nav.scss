@@ -109,6 +109,7 @@ $-nav-main-item-focus-top-offset: 4px;
   }
 
   .nav--main .nav__item--active & {
+    color: color(white);
     border-color: color(white);
   }
 }
