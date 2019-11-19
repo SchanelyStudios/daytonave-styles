@@ -7,6 +7,12 @@
   margin-bottom: baseline(4);
 }
 
+.blob__cta {
+  margin-top: baseline();
+  display: flex;
+  justify-content: center;
+}
+
 .blob__figure {
   max-width: 440px;
   margin-top: baseline(.5);
