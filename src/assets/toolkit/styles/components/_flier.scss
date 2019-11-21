@@ -58,6 +58,8 @@
   width: 100%;
   max-width: 320px;
 
+  @include figure-border-radius();
+
   @include media-max(719px) {
     margin-bottom: baseline();
     height: baseline(9.5);

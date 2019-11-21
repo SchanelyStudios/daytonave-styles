@@ -19,8 +19,8 @@
   margin-bottom: baseline();
   min-height: baseline(8);
   max-height: baseline(16);
-  border-radius: 2px;
-  overflow: hidden;
+
+  @include figure-border-radius();
 
   @include media-max(1119px) {
     margin-right: auto;
