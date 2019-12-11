@@ -30,6 +30,11 @@
   @include media-min(1400px) {
     width: calc((100% / 3) - 20px);
   }
+
+  @media print {
+    display: flex;
+    flex-flow: row wrap;
+  }
 }
 
 .household__surname {
@@ -39,6 +44,11 @@
   white-space: nowrap;
   overflow: hidden;
   grid-area: sur;
+
+  @media print {
+    width: 33%;
+    order: 1;
+  }
 }
 
 .household__email {
@@ -47,6 +57,11 @@
 
   overflow: hidden;
   grid-area: email;
+
+  @media print {
+    width: 67%;
+    order: 4;
+  }
 }
 
 .household__phone {
@@ -55,6 +70,11 @@
 
   overflow: hidden;
   grid-area: phone;
+
+  @media print {
+    width: 33%;
+    order: 3;
+  }
 }
 
 .household__contact-other {
@@ -62,6 +82,11 @@
 
   overflow: hidden;
   grid-area: other;
+
+  @media print {
+    width: 67%;
+    order: 2;
+  }
 
   > p {
     @extend %type-base;
@@ -73,6 +98,11 @@
 
 .household__image {
   grid-area: img;
+
+  @media print {
+    width: 67%;
+    order: 6;
+  }
 
   img {
     display: block;
@@ -89,6 +119,11 @@
   overflow: hidden;
   white-space: nowrap;
   grid-area: members;
+
+  @media print {
+    width: 33%;
+    order: 5;
+  }
 }
 
 
