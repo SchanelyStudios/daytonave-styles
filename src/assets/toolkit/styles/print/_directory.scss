@@ -13,13 +13,14 @@
   border: 1px solid color(base, 800);
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: baseline(2) auto 25px auto;
+  grid-template-rows: baseline(2) baseline(1.5) auto auto auto;
   grid-column-gap: 10px;
   grid-template-areas:
-    "sur     img"
+    "sur     other"
+    "phone   email"
     "members img"
-    "other   phone"
-    "other   email"
+    "members img"
+    "members img"
 }
 
 .household__surname {
