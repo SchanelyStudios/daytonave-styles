@@ -73,7 +73,8 @@
 .logo__church {
   fill: color(base, 200);
 
-  .logo--mono-light & {
+  .logo--mono-light &,
+  .logo--light & {
     fill: color(white);
   }
 
