@@ -1,13 +1,4 @@
 .households-wrapper {
-
-  @media print {
-    &::after {
-      counter-increment: page;
-      content: counter(page);
-      display: block;
-      text-align: right;
-    }
-  }
 }
 
 .households {
