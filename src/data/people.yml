@@ -7,7 +7,7 @@ households:
     city: "Beavercreek"
     state: "OH"
     zip: "45430"
-    photo_url: "https://placehold.it/600x400"
+    photo_url: "https://avatars.planningcenteronline.com/uploads/person/44695500-1542297286/avatar.1.png?g=350x350%23"
     adults:
       - "Bill"
   2:
@@ -18,7 +18,7 @@ households:
     city: "Spring Valley"
     state: "OH"
     zip: "45370"
-    photo_url: "https://placehold.it/600x400"
+    photo_url: "https://avatars.planningcenteronline.com/uploads/person/41110195-1534526772/avatar.1.png?g=350x350%23"
     adults:
       - "John"
       - "Tammy"
