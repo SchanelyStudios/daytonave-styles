@@ -90,3 +90,20 @@
   white-space: nowrap;
   grid-area: members;
 }
+
+
+/// Print settings
+
+@page {
+  margin: .5in 0;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  body {
+    margin: .5in;
+  }
+}
