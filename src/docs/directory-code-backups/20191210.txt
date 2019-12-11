@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="https://dabc-styles-staging.netlify.com/assets/toolkit/styles/toolkit.css" />
+</head>
+
+<body>
+  <!------   print to PDF bar   ---->
+  <div class="no-print">
+    <ul class="alert" role="alert">
+      <li>
+        <a href="https://people.planningcenteronline.com/reports/{{ report.id }}.pdf?list_id={{list.id}}" class="btn">Print to PDF</a>
+      </li>
+    </ul>
+  </div>
+  <!----- END print to PDF bar ----->
+
+<main class="households-wrapper">
+  <ul class="households">
+    {% for household in households %}
+      {% if household.active_adults.size > 0 %}
+        <li class="household">
+          <!--
+            First we'll loop through the household adults
+            to get the head of household data to display.
+          -->
+          {% for adult in household.active_adults %}
+            {% if adult.id == household.primary_contact.id %}
+              <h2 class="household__surname">{{ adult.last_name }}</h2>
+              <div class="household__image">
+                <img src="{{ adult.photo_url}}" />
+              </div>
+           {% endif %}
+          {% endfor %}
+
+          <!-- Next get household contact info -->
+          <div class="household__contact-other">
+            <p class="household__contact-misc">
+              {{ household.primary_address.street }}
+            </p>
+            <p class="household__contact-misc">
+              {{ household.primary_address.city }},
+              {{ household.primary_address.state }}
+              {{ household.primary_address.zip }}
+            </p>
+          </div>
+          <p class="household__phone">{{ household.primary_phone_number }}</p>
+          <p class="household__email">{{ household.primary_contact.primary_email }}</p>
+
+          <!--
+            Finally generate the list of memebers, starting
+            with head of household, then other adults, and then
+            any children.
+          -->
+          <ul class="household__members">
+            <!-- HOH first -->
+            {% for adult in household.active_adults %}
+              {% if adult.id == household.primary_contact.id %}
+              <li class="person person--hoh">
+                {{ adult.first_name }}
+                {% if adult.last_name != household.primary_contact.last_name %}{{ adult.last_name }}{% endif %}
+              </li>
+              {% endif %}
+            {% endfor %}
+
+            <!-- Other adults -->
+            {% for adult in household.active_adults %}
+              {% if adult.id != household.primary_contact.id %}
+              <li class="person person--adult">
+                {{ adult.first_name }}
+                {% if adult.last_name != household.primary_contact.last_name %}{{ adult.last_name }}{% endif %}
+              </li>
+              {% endif %}
+            {% endfor %}
+
+            <!-- Children -->
+            {% if household.active_children.size > 0 %}
+              {% for child in household.active_children %}
+              <li class="person person--child">
+                {{ child.first_name }}
+                {% if child.last_name != household.primary_contact.last_name %}{{ child.last_name }}{% endif %}
+              </li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </main>
+</body>
+</html>
