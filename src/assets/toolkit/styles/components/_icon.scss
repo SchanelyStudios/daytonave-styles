@@ -1,4 +1,27 @@
 ///
+/// Font awesome catch up settings
+///
+.fab {
+  font-family: 'Font Awesome 5 Brands';
+}
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 900;
+}
+
+.fal {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+}
+
+.far {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 400;
+}
+
+///
 /// Icon base class
 ///
 .icon {

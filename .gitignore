@@ -3,3 +3,5 @@ dist
 .sass-cache
 .idea
 .DS_Store
+
+src/assets/toolkit/fontawesome
