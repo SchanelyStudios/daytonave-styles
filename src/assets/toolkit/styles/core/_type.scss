@@ -26,32 +26,38 @@ body {
   @extend %type-base;
 }
 
-h1:not([class]) {
+h1:not([class]),
+.type-title {
   @extend %type-title;
   @extend %type-block-title;
 }
 
-h2:not([class]) {
+h2:not([class]),
+.type-display-1 {
   @extend %type-display-1;
   @extend %type-block-display-1;
 }
 
-h3:not([class]) {
+h3:not([class]),
+.type-display-2 {
   @extend %type-display-2;
   @extend %type-block-display-2;
 }
 
-h4:not([class]) {
+h4:not([class]),
+.type-display-3 {
   @extend %type-display-3;
   @extend %type-block-display-3;
 }
 
-h5:not([class]) {
+h5:not([class]),
+.type-display-4 {
   @extend %type-display-4;
   @extend %type-block-display-4;
 }
 
-h6:not([class]) {
+h6:not([class]),
+.type-display-5 {
   @extend %type-display-5;
   @extend %type-block-display-5;
 }

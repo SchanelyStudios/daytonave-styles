@@ -28,7 +28,15 @@
   }
 }
 
+.spread--flipped {
+  @include media-min(720px) {
+    grid-template-areas:
+      "content figure";
+  }
+}
+
 .spread__figure {
+  grid-area: figure;
   min-height: baseline(8);
   max-height: baseline(16);
 
@@ -45,10 +53,16 @@
   }
 }
 
-.spread__figure__img {
+.spread__figure__img,
+.spread__figure > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.spread__content {
+  grid-area: content;
 }
 
 .spread__content__cta {
