@@ -11,6 +11,7 @@
 
 @import "mixins/misc";
 @import "mixins/media";
+@import "mixins/rule";
 
 @import "vars/icons";
 @import "vars/type";
@@ -28,12 +29,14 @@
 @import "components/blob";
 @import "components/button";
 @import "components/button-bar";
+@import "components/event";
 @import "components/flier";
 @import "components/footer";
 @import "components/icon";
 @import "components/logo";
 @import "components/masthead";
 @import "components/nav";
+@import "components/schedule";
 @import "components/section-header";
 @import "components/spread";
 @import "components/tile";

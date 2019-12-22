@@ -1,0 +1,28 @@
+///
+/// Rule
+///
+@mixin rule($inset: 0) {
+  height: 1px;
+  border-bottom: .5px solid color(base, 700);
+  position: absolute;
+  right: $inset;
+  left: $inset;
+}
+
+@mixin rule-after($offset: 0, $inset: 0) {
+  &::after {
+    @include rule($inset);
+
+    content: "";
+    bottom: $offset;
+  }
+}
+
+@mixin rule-before($offset: 0, $inset: 0) {
+  &::before {
+    @include rule($inset);
+
+    content: "";
+    top: $offset;
+  }
+}

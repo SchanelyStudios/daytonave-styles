@@ -1,0 +1,22 @@
+.schedule {
+  box-sizing: border-box;
+  padding-right: $grid-pad-half;
+  padding-left: $grid-pad-half;
+  max-width: grid-width(4);
+}
+
+.schedule__events {
+  margin: 0 0 baseline(.5);
+}
+
+.schedule__label {
+  @extend %type-display-4;
+  @include rule-after;
+
+  padding-top: calc(var(--pad-top-level-4) + #{baseline(.5)});
+  padding-right: $grid-pad-half;
+  padding-bottom: calc(var(--pad-bottom-level-4) + #{baseline(.5)});
+  padding-left: $grid-pad-half;
+
+  position: relative;
+}

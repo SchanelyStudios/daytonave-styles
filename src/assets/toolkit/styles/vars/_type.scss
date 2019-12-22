@@ -159,6 +159,13 @@ $type-specs: (
     transform: uppercase,
     weight: 300,
   ),
+  label-em: (
+    font: font(base),
+    size: level-5,
+    style: normal,
+    transform: uppercase,
+    weight: 600,
+  ),
   sub: (
     font: font(base),
     size: level-6,

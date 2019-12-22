@@ -1,0 +1,14 @@
+.event {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-column-gap: 30px;
+  padding: baseline(.5) $grid-pad-half;;
+  position: relative;
+
+  @include rule-after;
+}
+
+.event__time {
+  @extend %type-label-em;
+  @extend %type-block-label-em;
+}
