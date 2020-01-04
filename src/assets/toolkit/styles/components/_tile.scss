@@ -52,17 +52,6 @@
   }
 }
 
-.tile__image,
-.tile__figure > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  .tile--facehole & {
-    border-radius: 50%;
-  }
-}
-
 .tile__figure {
   margin-right: auto;
   margin-bottom: baseline(.5);
@@ -71,11 +60,20 @@
 
   @include figure-border-radius();
 
+  .tile--facehole & {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
   @include media-max(839px) {
     height: baseline(9);
 
     .tile--facehole & {
       width: baseline(9);
+    }
+
+    .tile--illustration & {
+      height: baseline(5);
     }
   }
 
@@ -86,6 +84,10 @@
       width: baseline(10);
       height: baseline(10);
     }
+
+    .tile--illustration & {
+      height: baseline(7);
+    }
   }
 
   @include media(1080px, 1319px) {
@@ -94,6 +96,10 @@
     .tile--facehole & {
       width: baseline(7);
     }
+
+    .tile--illustration & {
+      height: baseline(5);
+    }
   }
 
   @include media-min(1320px) {
@@ -101,6 +107,10 @@
 
     .tile--facehole & {
       width: baseline(10);
+    }
+
+    .tile--illustration & {
+      height: baseline(6);
     }
   }
 }

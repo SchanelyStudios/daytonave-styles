@@ -1,29 +1,29 @@
 tiles:
   1:
-    image: http://placehold.it/300x300?text=FPO
+    image: /assets/toolkit/images/icon-bible.svg
     title: Display 5 Lorem ipsum dolor sit
     copy: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean accumsan rhoncus tortor, vitae gravida mauris ornare at. Sed ornare porttitor odio, a cursus urna. Quisque mattis nisl ac cursus cursus. Integer id tortor tellus. Sed viverra eros ligula, vel feugiat erat tincidunt non.
   2:
-    image: http://placehold.it/300x300?text=FPO
+    image: /assets/toolkit/images/icon-church.svg
     title: Display 5 Lorem ipsum dolor sit
     copy: Sed blandit mattis enim sit amet rutrum. Praesent commodo tincidunt odio, aliquet porttitor magna aliquam vitae. Sed iaculis pellentesque congue.
   3:
-    image: http://placehold.it/300x300?text=FPO
+    image: /assets/toolkit/images/icon-creation.svg
     title: Display 5 Lorem ipsum dolor sit
     copy: Quisque id velit eu magna iaculis pulvinar. Pellentesque vitae ligula molestie, tincidunt sem vel, cursus eros. Cras placerat, velit id aliquam viverra, orci enim convallis leo, eget auctor ante risus ut nibh. Praesent pharetra velit urna, ac tincidunt mauris convallis non.
   4:
-    image: http://placehold.it/300x300?text=FPO
+    image: /assets/toolkit/images/icon-cross.svg
     title: Display 5 Lorem ipsum dolor sit
     copy: Donec mauris diam, feugiat quis mollis eget, dictum vel ex. Praesent dapibus velit eu consectetur dignissim. Maecenas sed risus arcu. Sed tellus tortor, pretium ut eros a, efficitur mattis mauris. Cras vitae dapibus eros.
   5:
-    image: http://placehold.it/300x300?text=FPO
+    image: /assets/toolkit/images/icon-gospel.svg
     title: Display 5 Lorem ipsum dolor sit
     copy: Nunc consectetur pulvinar risus, ut ornare orci facilisis eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim nec ante id pharetra. In ante velit, pharetra et tincidunt ut, facilisis et nulla.
   6:
-    image: http://placehold.it/300x300?text=FPO
+    image: /assets/toolkit/images/icon-grave.svg
     title: Display 5 Lorem ipsum dolor sit
     copy: Nam pulvinar felis vel ante consequat, sed sagittis ex facilisis. Proin dui augue, porttitor sed tellus a, semper viverra mauris. Integer viverra egestas massa nec vehicula. Donec vel tellus euismod, ultricies purus at, cursus ex. Donec condimentum lobortis eros, vel feugiat orci tincidunt eu.
   7:
-    image: http://placehold.it/300x300?text=FPO
+    image: /assets/toolkit/images/icon-jesus.svg
     title: Display 5 Lorem ipsum dolor sit
     copy: Vivamus rutrum nisi quis pellentesque imperdiet. Aenean turpis massa, faucibus eget maximus et, laoreet quis nulla. Duis aliquet vitae neque vitae convallis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut at hendrerit nisl, id pulvinar leo. Fusce a ultricies elit. Aliquam erat volutpat.

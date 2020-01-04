@@ -1,14 +1,11 @@
 <ul class="tiles">
   {{#each tiles-facehole.tiles}}
     <li class="tile tile--facehole">
-      <div class="tile__figure">
-        <img class="tile__image" src="{{image}}" alt="" />
+      <div class="tile__figure figure">
+        <img src="{{image}}" alt="" />
       </div>
       <h5 class="tile__name">{{name}}</h5>
       <p class="tile__title">{{title}}</p>
-      <div class="tile__copy">
-        <p>{{copy}}</p>
-      </div>
     </li>
   {{/each}}
 </ul>

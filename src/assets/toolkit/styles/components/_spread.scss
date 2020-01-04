@@ -53,14 +53,6 @@
   }
 }
 
-.spread__figure__img,
-.spread__figure > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .spread__content {
   grid-area: content;
 }
