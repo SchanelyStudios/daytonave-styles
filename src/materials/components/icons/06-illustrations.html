@@ -1,0 +1,14 @@
+---
+notes: |
+  We also have a series of illustration icons available for use.
+---
+<ul class="tiles">
+  {{#each illustrations.illustrations}}
+    <li class="tile tile--illustration">
+      <div class="tile__figure figure figure--svg">
+        <img src="{{path}}" alt="{{name}}" />
+      </div>
+      <p class="tile__title">{{name}}</p>
+    </li>
+  {{/each}}
+</ul>

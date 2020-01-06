@@ -1,0 +1,37 @@
+illustrations:
+  0:
+    name: Bible
+    path: /assets/toolkit/images/icon-bible.svg
+  1:
+    name: Church
+    path: /assets/toolkit/images/icon-church.svg
+  2:
+    name: Creation
+    path: /assets/toolkit/images/icon-creation.svg
+  3:
+    name: Cross
+    path: /assets/toolkit/images/icon-cross.svg
+  4:
+    name: Gospel
+    path: /assets/toolkit/images/icon-gospel.svg
+  5:
+    name: Grave
+    path: /assets/toolkit/images/icon-grave.svg
+  6:
+    name: Jesus
+    path: /assets/toolkit/images/icon-jesus.svg
+  7:
+    name: Kneel
+    path: /assets/toolkit/images/icon-kneel.svg
+  8:
+    name: Love
+    path: /assets/toolkit/images/icon-love.svg
+  9:
+    name: Prayer
+    path: /assets/toolkit/images/icon-prayer.svg
+  10:
+    name: Spirit
+    path: /assets/toolkit/images/icon-spirit.svg
+  11:
+    name: Water
+    path: /assets/toolkit/images/icon-water.svg
