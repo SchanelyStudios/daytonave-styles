@@ -67,6 +67,20 @@ h6:not([class]),
   @extend %type-block-lead;
 
   margin-bottom: baseline(.5);
+
+  > p:not([class]) {
+    @extend %type-lead;
+
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
 }
 
 li {
