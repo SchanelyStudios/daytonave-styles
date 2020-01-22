@@ -1,5 +1,1 @@
-This is a markdown document.
-
-```javascript
-var foo = 'bar'
-```
+There are currently no Javascript documents to display or discuss here.

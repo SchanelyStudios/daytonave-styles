@@ -8,3 +8,14 @@
 Component documentation site for Dayton Avenue Baptist Church design system.
 
 Built using [Fabricator](http://fbrctr.github.io/) by [Luke Askew](http://twitter.com/lukeaskew).
+
+Develop locally by using the following commands:
+
+```
+npm i && npm start
+```
+
+Note the following as well:
+
+- Styles can be found in `src/assets/toolkit/styles`
+- Markup templates can be found in `src/materials`
