@@ -6,6 +6,10 @@
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
+
+  .section-header + & {
+    margin-top: baseline(2);
+  }
 }
 
 .tile {

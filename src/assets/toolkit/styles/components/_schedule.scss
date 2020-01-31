@@ -2,11 +2,14 @@
   box-sizing: border-box;
   padding-right: $grid-pad-half;
   padding-left: $grid-pad-half;
-  max-width: grid-width(4);
+  width: 100%;
+  max-width: grid-width(5);
 }
 
 .schedule__events {
-  margin: 0 0 baseline(.5);
+  &:not(:last-child) {
+    margin: 0 0 baseline(.5);
+  }
 }
 
 .schedule__label {

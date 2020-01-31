@@ -87,4 +87,11 @@ button,
       }
     }
   }
+
+  &.btn--center {
+    margin-right: auto;
+    margin-left: auto;
+    width: max-content;
+    display: block;
+  }
 }

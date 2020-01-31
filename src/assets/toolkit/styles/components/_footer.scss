@@ -2,6 +2,10 @@
   background-color: color(primary, 800);
   display: grid;
 
+  &:not(:only-child) {
+    margin-top: baseline(4);
+  }
+
   @include media-max(359px) {
     padding-right: $grid-pad;
     padding-left: $grid-pad;
