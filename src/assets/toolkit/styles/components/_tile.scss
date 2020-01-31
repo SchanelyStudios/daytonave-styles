@@ -12,6 +12,10 @@
   }
 }
 
+.tiles-cta {
+  margin-bottom: baseline(4);
+}
+
 .tile {
   padding-right: $grid-pad;
   padding-left: $grid-pad;
@@ -24,29 +28,30 @@
 
   @include media-min(600px) {
     margin-right: $grid-pad;
-    margin-bottom: baseline(2);
     margin-left: $grid-pad;
   }
 
   @include media(600px, 1079px) {
     width: calc(100% / 2 - #{$grid-gutter});
+    margin-bottom: baseline(2);
   }
 
   @include media-min(1080px) {
-    width: calc(100% / 4 - #{$grid-gutter});
+    width: calc(100% / 3 - #{$grid-gutter});
+    margin-bottom: baseline(3);
   }
 }
 
 .tile__name {
-  @extend %type-display-5;
-  @extend %type-block-display-5;
+  @extend %type-display-4;
+  @extend %type-block-display-4;
 
   text-align: center;
 }
 
 .tile__title {
-  @extend %type-display-5;
-  @extend %type-block-display-5;
+  @extend %type-display-4;
+  @extend %type-block-display-4;
 
   text-align: center;
 

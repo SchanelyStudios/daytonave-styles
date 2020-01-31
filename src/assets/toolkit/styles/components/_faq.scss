@@ -1,0 +1,29 @@
+.faqs {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: grid-width(10);
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.faq {
+  padding-right: $grid-pad;
+  padding-left: $grid-pad;
+  margin-bottom: baseline(2);
+  box-sizing: border-box;
+
+  @include media-max(719px) {
+    width: 100%;
+  }
+
+  @include media-min(720px) {
+    width: 50%;
+  }
+}
+
+.faq__question {
+  @extend %type-display-4;
+  @extend %type-block-display-4;
+}
+
+.faq__answer {}
