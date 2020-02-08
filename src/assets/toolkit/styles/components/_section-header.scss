@@ -61,3 +61,30 @@ $-section-header-pad-bottom-display-3: baseline(3.5);
     padding-bottom: $-section-header-pad-bottom-display-2;
   }
 }
+
+.section-header__sub {
+  display: block;
+  color: color(base, 600);
+
+  .section-header--display-1 & {
+    @extend %type-display-4;
+    letter-spacing: .4rem;
+
+    text-transform: uppercase;
+  }
+
+  .section-header--display-2 & {
+    @extend %type-display-5;
+    letter-spacing: .3rem;
+
+    text-transform: uppercase;
+  }
+
+  &:first-child {
+    margin-bottom: baseline(.5);
+  }
+
+  &:last-child {
+    margin-top: baseline(.5);
+  }
+}

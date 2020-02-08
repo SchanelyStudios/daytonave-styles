@@ -63,6 +63,12 @@ $fa-icon-list: (
     content: $fa-var-bars,
     offset: #default-offset,
   ),
+  menu-close: (
+    default-set: fas,
+    icon: fa-times,
+    content: $fa-var-times,
+    offset: #default-offset,
+  ),
   phone: (
     default-set: fas,
     icon: fa-phone,

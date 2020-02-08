@@ -13,7 +13,7 @@
       "nav-main nav-main"
       "address  address"
       "nav-sub  nav-sub";
-    grid-template-rows: baseline(4) 1fr baseline(4) baseline(4.5);
+    grid-template-rows: baseline(4) 0 0 0;
   }
 
   @include media(600px, 959px) {
@@ -22,11 +22,7 @@
       "brand    address  menu-icon"
       "nav-main nav-main nav-main"
       "nav-sub  nav-sub  nav-sub";
-    grid-template-rows: baseline(6) 1fr baseline(5.5);
-  }
-
-  @include media-max(959px) {
-    height: 100vh;
+    grid-template-rows: baseline(6) 0 0;
   }
 
   @include media-min(960px) {
@@ -69,6 +65,20 @@
   }
 }
 
+.masthead--mobile-nav-on {
+  @include media-max(599px) {
+    grid-template-rows: baseline(4) 1fr baseline(4) baseline(4.5);
+  }
+
+  @include media(600px, 959px) {
+    grid-template-rows: baseline(6) 1fr baseline(5.5);
+  }
+
+  @include media-max(959px) {
+    height: 100vh;
+  }
+}
+
 .masthead__menu-icon {
   padding-left: 0;
   padding-right: 0;
@@ -88,12 +98,16 @@
 .masthead__address {
   grid-area: address;
   text-align: center;
+  overflow: hidden;
 
   @include media-max(599px) {
     margin-right: -$grid-pad;
     margin-left: -$grid-pad;
-    padding-top: baseline();
     background-color: color(primary, 100);
+
+    .masthead--mobile-nav-on & {
+      padding-top: baseline();
+    }
   }
 
   @include media(600px, 959px) {
@@ -127,6 +141,7 @@
 
 .masthead__nav-sub {
   grid-area: nav-sub;
+  overflow: hidden;
 
   @include media-max(959px) {
     margin-right: -$grid-pad;
@@ -136,7 +151,9 @@
   }
 
   @include media(600px, 959px) {
-    padding-top: baseline();
+    .masthead--mobile-nav-on & {
+      padding-top: baseline();
+    }
   }
 
   @include media-min(960px) {
@@ -146,6 +163,7 @@
 
 .masthead__nav-main {
   grid-area: nav-main;
+  overflow: hidden;
 
   @include media-max(959px) {
     margin-right: -$grid-pad;
