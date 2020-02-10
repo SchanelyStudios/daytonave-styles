@@ -83,6 +83,15 @@ h6:not([class]),
   }
 }
 
+.lead--centered {
+  max-width: grid-width(8);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $grid-pad;
+  padding-left: $grid-pad;
+  text-align: center;
+}
+
 li {
   &:not([class]) {
     @extend %type-base;
