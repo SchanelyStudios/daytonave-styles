@@ -12,6 +12,21 @@
   margin: 0 auto;
 }
 
+.figure--avatar {
+  max-width: grid-width(4);
+  margin: 0 auto;
+}
+
+.figure--avatar-lg {
+  max-width: grid-width(6);
+  margin: 0 auto;
+}
+
+.figure--avatar-sm {
+  max-width: grid-width(2);
+  margin: 0 auto;
+}
+
 .figure--native,
 .figure--svg {
   display: flex;
