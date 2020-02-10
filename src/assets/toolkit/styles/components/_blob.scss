@@ -7,6 +7,12 @@
   margin-bottom: baseline(4);
 }
 
+.blob__lead {
+  .blob--centered & {
+    text-align: center;
+  }
+}
+
 .blob__cta {
   margin-top: baseline();
   display: flex;
