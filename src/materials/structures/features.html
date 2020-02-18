@@ -1,0 +1,68 @@
+---
+notes: |
+  Features carousel for showing a set of featured items in rotating fashion.
+---
+<div class="feature-container">
+  <ul class="features">
+    <li class="feature">
+      <a class="feature__link" href="/resources/live-stream" title="Dayton Avenue Baptist Church Live Stream">
+        <img
+          class="feature__figure"
+          src="https://images.prismic.io/dabc-test/b8da36da-71db-436b-a21e-f2529aaecaca_live-stream-1024x576.jpg?auto=compress,format"
+          alt="Dayton Avenue Baptist Church Live Stream"
+        />
+      </a>
+    </li>
+    <li class="feature feature--active">
+      <a class="feature__link" href="/events/2020-spring-wednesday-events" title="2020 Spring Wednesday Events">
+        <img
+          class="feature__figure"
+          src="https://images.prismic.io/dabc-test/d01ec3a9-1941-4023-b60b-c14c8c1b013e_wednesday-evening.jpg?auto=compress,format"
+          alt="2020 Spring Wednesday Events"
+        />
+      </a>
+    </li>
+    <li class="feature">
+      <a class="feature__link" href="/events/2020-june-sunday-evening-schedule" title="June Sunday Evening Schedule">
+        <img
+          class="feature__figure"
+          src="https://images.prismic.io/dabc-test%2Fe71765e6-6fba-4db7-be4d-97bdca536098_june-sunday-evening.jpg?auto=compress,format"
+          alt="June Sunday Evening Schedule"
+        />
+      </a>
+    </li>
+    <li class="feature">
+      <a class="feature__link" href="/events/2020-genesis-lifegroup" title="Genesis LifeGroup">
+        <img
+          class="feature__figure"
+          src="https://images.prismic.io/dabc-test%2Fc086e4ac-8b24-4108-826d-e397c9b476b5_genesis-class.jpg?auto=compress,format"
+          alt="Genesis LifeGroup"
+        />
+      </a>
+    </li>
+  </ul>
+
+  <button class="btn--clean feature-nav feature-nav--prev">
+    <i class="icon icon--size-display-1 icon--angle-left"></i>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="btn--clean feature-nav feature-nav--next">
+    <i class="icon icon--size-display-1 icon--angle-right"></i>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+  <ul class="feature-tabs">
+    <li class="feature-tab feature-tab--active">
+      <b class="visually-hidden">1: Dayton Avenue Baptist Church Live Stream</b>
+    </li>
+    <li class="feature-tab">
+      <b class="visually-hidden">2: 2020 Spring Wednesday Events</b>
+    </li>
+    <li class="feature-tab">
+      <b class="visually-hidden">3: June Sunday Evening Schedule</b>
+    </li>
+    <li class="feature-tab">
+      <b class="visually-hidden">4: Genesis LifeGroup</b>
+    </li>
+  </ul>
+</div>

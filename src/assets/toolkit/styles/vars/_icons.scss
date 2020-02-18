@@ -15,6 +15,18 @@
 $default-offset: 1px;
 
 $fa-icon-list: (
+  angle-right: (
+    default-set: fas,
+    icon: fa-angle-right,
+    content: $fa-var-angle-right,
+    offset: $default-offset,
+  ),
+  angle-left: (
+    default-set: fas,
+    icon: fa-angle-left,
+    content: $fa-var-angle-left,
+    offset: $default-offset,
+  ),
   caret-down: (
     default-set: fas,
     icon: fa-caret-down,
